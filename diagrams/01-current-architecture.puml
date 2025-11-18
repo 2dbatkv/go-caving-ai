@@ -1,0 +1,76 @@
+@startuml Current Architecture - gocaving.ai (Phase 1)
+!define RECTANGLE class
+
+skinparam componentStyle rectangle
+skinparam backgroundColor #F0F0F0
+skinparam component {
+  BackgroundColor<<frontend>> #10b981
+  BackgroundColor<<service>> #3b82f6
+  BackgroundColor<<data>> #f59e0b
+  BorderColor #1e293b
+}
+
+title gocaving.ai - Current Architecture (Static Site + Netlify Forms)
+
+package "User Browser" {
+  [Web Browser] <<frontend>>
+}
+
+package "GitHub" {
+  [Repository\ngo-caving-ai] <<data>>
+}
+
+package "Netlify CDN" {
+  [Static Site\nHTML/CSS/JS] <<frontend>>
+  [Netlify Forms] <<service>>
+  [Form Storage] <<data>>
+  [SSL/HTTPS] <<service>>
+}
+
+package "GoDaddy DNS" {
+  [DNS Records\ngocaving.ai] <<service>>
+}
+
+package "External Resources" {
+  [Tailwind CDN] <<service>>
+  [Cave Images\n(assets/)] <<data>>
+}
+
+' Relationships
+[Web Browser] --> [DNS Records\ngocaving.ai] : 1. Resolve domain
+[DNS Records\ngocaving.ai] --> [Static Site\nHTML/CSS/JS] : 2. Points to Netlify
+[Web Browser] --> [Static Site\nHTML/CSS/JS] : 3. HTTPS request
+[Static Site\nHTML/CSS/JS] --> [Tailwind CDN] : Load CSS
+[Static Site\nHTML/CSS/JS] --> [Cave Images\n(assets/)] : Load images
+[Web Browser] --> [Netlify Forms] : 4. Submit form data
+[Netlify Forms] --> [Form Storage] : 5. Store submissions
+[Repository\ngo-caving-ai] --> [Static Site\nHTML/CSS/JS] : Auto-deploy on push
+
+note right of [Netlify Forms]
+  Two forms:
+  - email-updates
+  - ai-caving-feedback
+
+  Features:
+  - Spam filtering (honeypot)
+  - CSV export
+  - Email notifications
+end note
+
+note right of [Static Site\nHTML/CSS/JS]
+  Content:
+  - Hero with background
+  - Upcoming discussions
+  - Projects & Tools
+  - Past recordings
+  - Feedback form
+end note
+
+note left of [Repository\ngo-caving-ai]
+  GitHub Actions:
+  - Push to main
+  - Triggers Netlify build
+  - Auto-deploy (30-60s)
+end note
+
+@enduml

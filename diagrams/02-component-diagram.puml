@@ -1,0 +1,125 @@
+@startuml Component Diagram - gocaving.ai
+
+!define RECTANGLE class
+
+skinparam component {
+  BackgroundColor<<frontend>> #10b981
+  BackgroundColor<<service>> #3b82f6
+  BackgroundColor<<data>> #f59e0b
+  BackgroundColor<<external>> #8b5cf6
+  BorderColor #1e293b
+}
+
+title Component Breakdown - gocaving.ai
+
+package "Frontend (Static HTML)" {
+  component "Hero Section" <<frontend>> {
+    [Background Image]
+    [Email Signup Form]
+    [Heading & Tagline]
+  }
+
+  component "Discussions Section" <<frontend>> {
+    [Event Cards]
+    [Date/Time/Link]
+    [Description]
+  }
+
+  component "Projects Section" <<frontend>> {
+    [In Progress\nCards]
+    [Roadmap Cards]
+    [Links to Apps]
+  }
+
+  component "Recordings Section" <<frontend>> {
+    [Recording Cards]
+    [YouTube Links]
+  }
+
+  component "Feedback Section" <<frontend>> {
+    [Feedback Form]
+  }
+}
+
+package "Styling" {
+  component "Tailwind CSS" <<external>> {
+    [Utility Classes]
+    [Custom Theme]
+    [Responsive Grid]
+  }
+
+  component "Custom CSS" <<frontend>> {
+    [Cave Theme Colors]
+    [Card Styles]
+    [Animations]
+  }
+}
+
+package "Interactivity" {
+  component "script.js" <<frontend>> {
+    [Form Validation]
+    [Scroll Animations]
+    [Card Hover Effects]
+  }
+}
+
+package "Assets" {
+  component "Images" <<data>> {
+    [hero-caving.jpg]
+    [discussions-bg.jpg]
+    [projects-bg.jpg]
+    [recordings-bg.jpg]
+  }
+}
+
+package "Netlify Services" {
+  component "Form Handler" <<service>> {
+    [Spam Detection]
+    [Data Storage]
+    [Notifications]
+  }
+
+  component "CDN" <<service>> {
+    [Global Edge Network]
+    [SSL/TLS]
+    [Asset Caching]
+  }
+
+  database "Form Database" <<data>> {
+    [email-updates]
+    [ai-caving-feedback]
+  }
+}
+
+' Relationships
+[Email Signup Form] --> [Form Handler] : POST
+[Feedback Form] --> [Form Handler] : POST
+[Form Handler] --> [Form Database] : Store
+[Tailwind CSS] --> [Hero Section] : Style
+[Tailwind CSS] --> [Discussions Section] : Style
+[Tailwind CSS] --> [Projects Section] : Style
+[Custom CSS] --> [Hero Section] : Theme
+[script.js] --> [Email Signup Form] : Validate
+[script.js] --> [Feedback Form] : Validate
+[Images] --> [Hero Section] : Background
+[Images] --> [Discussions Section] : Background
+[Images] --> [Projects Section] : Background
+[CDN] --> [Images] : Serve
+[CDN] --> [Tailwind CSS] : Serve
+
+note right of [Form Handler]
+  Features:
+  - Honeypot spam filter
+  - Email notifications
+  - CSV export
+  - Dashboard view
+end note
+
+note left of [Images]
+  Cave photography:
+  - 2-3 MB each
+  - Lazy loading
+  - Transform: scale(1.3)
+end note
+
+@enduml

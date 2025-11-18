@@ -1,0 +1,77 @@
+@startuml Data Flow Diagram
+
+!define RECTANGLE class
+
+skinparam activity {
+  BackgroundColor<<data>> #10b981
+  BackgroundColor<<process>> #3b82f6
+  BackgroundColor<<storage>> #f59e0b
+  BorderColor #1e293b
+}
+
+title Data Flow - gocaving.ai (Current State)
+
+|User|
+start
+:Visit gocaving.ai;
+:Browse content;
+
+if (Want updates?) then (yes)
+  :Fill email form;
+  :Click Subscribe;
+  |Netlify Forms|
+  :Receive POST request <<process>>;
+  :Check honeypot field <<process>>;
+  if (Honeypot triggered?) then (yes)
+    :Reject submission;
+    |User|
+    :See error message;
+    stop
+  else (no)
+    |Netlify Forms|
+    :Run spam detection <<process>>;
+    if (Spam detected?) then (yes)
+      :Store in spam folder <<storage>>;
+      :Send 200 OK;
+    else (no)
+      :Store in verified <<storage>>;
+      :Trigger notification <<process>>;
+      |Admin Email|
+      :Receive notification;
+      |User|
+      :See success message;
+    endif
+  endif
+else (no)
+  :Continue browsing;
+endif
+
+if (Want to give feedback?) then (yes)
+  :Fill feedback form;
+  :Submit;
+  |Netlify Forms|
+  :Process feedback <<process>>;
+  :Store submission <<storage>>;
+  :Notify admin <<process>>;
+else (no)
+  :Navigate away;
+endif
+
+stop
+
+note right of "Check honeypot field"
+  Honeypot validation:
+  - Hidden field "bot-field"
+  - Should be empty
+  - If filled = bot
+end note
+
+note right of "Run spam detection"
+  Spam signals:
+  - Obvious test data
+  - Suspicious patterns
+  - IP reputation
+  - Rate limiting
+end note
+
+@enduml

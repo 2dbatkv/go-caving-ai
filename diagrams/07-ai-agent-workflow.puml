@@ -1,0 +1,101 @@
+@startuml AI Agent Workflow - Survey Analysis
+
+skinparam sequenceMessageAlign center
+skinparam participantPadding 20
+skinparam boxPadding 10
+
+title AI Agent Workflow: Cave Survey Analysis with MCP
+
+actor User
+participant "Web UI" as UI
+participant "API Gateway" as API
+participant "Agent\nOrchestrator" as Orchestrator
+participant "Survey Analysis\nAgent" as Agent
+participant "MCP Server" as MCP
+participant "Survey Data\nTool" as Tool
+participant "Claude API" as Claude
+participant "Vector DB" as VectorDB
+participant "PostgreSQL" as DB
+
+== User Request ==
+User -> UI: Upload survey file\n(TopoDroid .txt)
+UI -> API: POST /api/analyze-survey
+API -> Orchestrator: Create analysis task
+
+== Agent Selection ==
+Orchestrator -> Orchestrator: Determine task type
+Orchestrator -> Agent: Assign survey analysis
+
+== MCP Tool Discovery ==
+Agent -> MCP: Request available tools
+MCP --> Agent: Return tool list:\n- survey_data_tool\n- validation_tool\n- visualization_tool
+
+== Survey Data Reading ==
+Agent -> MCP: Call survey_data_tool.read()
+MCP -> Tool: Execute read_topo_droid()
+Tool -> DB: Check if file exists
+DB --> Tool: File metadata
+Tool --> MCP: Raw survey data
+MCP --> Agent: Parsed survey data
+
+== AI Analysis ==
+Agent -> Agent: Prepare prompt with data
+Agent -> Claude: Analyze survey structure
+Claude --> Agent: Identified issues:\n- 3 duplicate stations\n- 2 closure errors\n- Inconsistent naming
+
+== Vector Search for Context ==
+Agent -> MCP: Call vector_search_tool
+MCP -> VectorDB: Query similar caves
+VectorDB --> MCP: Top 5 similar surveys
+MCP --> Agent: Contextual examples
+
+== Generate Recommendations ==
+Agent -> Claude: Generate fixes with context
+Claude --> Agent: Recommended corrections:\n1. Merge stations A1/A-1\n2. Adjust loop closure\n3. Standardize names
+
+== Validation ==
+Agent -> MCP: Call validation_tool.check()
+MCP -> Tool: Validate proposed changes
+Tool --> MCP: Validation results
+MCP --> Agent: Changes are valid
+
+== Store Results ==
+Agent -> DB: Store analysis results
+Agent -> VectorDB: Store survey embedding
+Agent -> Orchestrator: Task complete
+
+== Response to User ==
+Orchestrator -> API: Analysis complete
+API -> UI: Return results + visualizations
+UI -> User: Display:\n- Issues found\n- Recommendations\n- Fixed survey preview\n- Download option
+
+note over Agent, Claude
+  Agent uses Claude to:
+  - Understand survey structure
+  - Identify patterns
+  - Generate human-readable
+    explanations
+  - Suggest corrections
+end note
+
+note over MCP, Tool
+  MCP provides:
+  - Tool abstraction
+  - Session state
+  - Context management
+  - Error handling
+  - Resource access control
+end note
+
+note over VectorDB
+  Vector embeddings store:
+  - Survey metadata
+  - Cave descriptions
+  - Historical analyses
+  - Best practices
+
+  For semantic search and
+  contextual recommendations
+end note
+
+@enduml

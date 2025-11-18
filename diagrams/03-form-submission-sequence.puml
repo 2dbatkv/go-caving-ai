@@ -1,0 +1,87 @@
+@startuml Form Submission Sequence
+
+skinparam sequenceMessageAlign center
+skinparam participantPadding 20
+skinparam boxPadding 10
+
+title Email Signup Form Submission Flow
+
+actor User
+participant "Web Browser" as Browser
+participant "gocaving.ai\n(Static HTML)" as Site
+participant "script.js" as JS
+participant "Netlify Forms" as Forms
+participant "Form Storage" as DB
+participant "Admin Email" as Email
+
+== Page Load ==
+User -> Browser: Visit gocaving.ai
+Browser -> Site: GET /
+Site --> Browser: HTML + CSS + JS
+Browser -> JS: Initialize
+JS --> Browser: Add event listeners
+
+== Form Interaction ==
+User -> Browser: Enter name & email
+Browser -> JS: Input change event
+JS -> JS: Validate email format
+JS --> Browser: Update UI (border color)
+
+== Form Submission ==
+User -> Browser: Click "Subscribe"
+Browser -> JS: Submit event
+JS -> JS: Validate all fields
+alt Validation Fails
+  JS --> Browser: Show error (red border)
+  Browser --> User: Invalid input
+else Validation Passes
+  JS --> Browser: Show loading state
+  Browser -> Forms: POST form data\n(with honeypot)
+
+  == Netlify Processing ==
+  Forms -> Forms: Check honeypot
+  alt Honeypot Triggered
+    Forms --> Browser: 400 Bad Request
+    Browser --> User: "Submission failed"
+  else Honeypot Clean
+    Forms -> Forms: Run spam detection
+    alt Marked as Spam
+      Forms -> DB: Store in spam folder
+      Forms --> Browser: 200 OK (but in spam)
+    else Verified
+      Forms -> DB: Store in verified
+      Forms -> Email: Send notification
+      Forms --> Browser: 200 OK
+      Browser -> Site: Redirect to success page
+      Browser --> User: "Thanks for subscribing!"
+    end
+  end
+end
+
+== Admin Views Submission ==
+User -> Browser: Login to Netlify
+Browser -> Forms: View submissions
+Forms -> DB: Query submissions
+DB --> Forms: Return data
+Forms --> Browser: Display in dashboard
+Browser --> User: Show submission details
+
+note over Forms, DB
+  Form data stored:
+  - Timestamp
+  - Name (optional)
+  - Email
+  - IP address
+  - User agent
+  - Spam status
+end note
+
+note over Email
+  Notification includes:
+  - Form name
+  - Submission time
+  - All field values
+  - Link to Netlify dashboard
+end note
+
+@enduml

@@ -1,0 +1,126 @@
+@startuml Phase 2 Architecture - Backend Integration
+
+skinparam component {
+  BackgroundColor<<frontend>> #10b981
+  BackgroundColor<<backend>> #3b82f6
+  BackgroundColor<<database>> #f59e0b
+  BackgroundColor<<external>> #8b5cf6
+  BorderColor #1e293b
+}
+
+title gocaving.ai - Phase 2 Architecture (Backend + Database)
+
+package "User" {
+  [Web Browser] <<frontend>>
+}
+
+package "Netlify (Frontend)" {
+  [Static Site\nReact/Vue] <<frontend>>
+  component "Frontend Features" {
+    [Hero]
+    [Discussions]
+    [Projects]
+    [Recordings]
+    [Forms]
+  }
+}
+
+package "Render (Backend)" {
+  component "API Server\nFastAPI/Flask" <<backend>> {
+    [GET /api/sessions]
+    [GET /api/recordings]
+    [POST /api/email-updates]
+    [POST /api/feedback]
+    [GET /api/projects]
+  }
+
+  component "Services" <<backend>> {
+    [Email Service]
+    [Auth Service]
+    [Data Validation]
+    [Rate Limiting]
+  }
+}
+
+package "Database" {
+  database "PostgreSQL\n(Render)" <<database>> {
+    [subscribers]
+    [feedback]
+    [sessions]
+    [recordings]
+    [projects]
+  }
+}
+
+package "Email Service" {
+  [SendGrid/Mailgun] <<external>>
+}
+
+package "External APIs" {
+  [YouTube API] <<external>>
+  [Calendar API] <<external>>
+}
+
+' Relationships
+[Web Browser] --> [Static Site\nReact/Vue] : HTTPS
+[Static Site\nReact/Vue] --> [GET /api/sessions] : Fetch events
+[Static Site\nReact/Vue] --> [GET /api/recordings] : Fetch recordings
+[Static Site\nReact/Vue] --> [POST /api/email-updates] : Submit email
+[Static Site\nReact/Vue] --> [POST /api/feedback] : Submit feedback
+[Static Site\nReact/Vue] --> [GET /api/projects] : Fetch projects
+
+[GET /api/sessions] --> [sessions] : Query
+[GET /api/recordings] --> [recordings] : Query
+[POST /api/email-updates] --> [subscribers] : Insert
+[POST /api/feedback] --> [feedback] : Insert
+[GET /api/projects] --> [projects] : Query
+
+[POST /api/email-updates] --> [Email Service] : Trigger confirmation
+[Email Service] --> [SendGrid/Mailgun] : Send email
+
+[GET /api/recordings] --> [YouTube API] : Fetch metadata
+[GET /api/sessions] --> [Calendar API] : Sync events
+
+note right of [API Server\nFastAPI/Flask]
+  Backend Features:
+  - RESTful API
+  - CORS configured
+  - JWT authentication
+  - Rate limiting
+  - Input validation
+  - Error handling
+end note
+
+note right of [PostgreSQL\n(Render)]
+  Database Tables:
+
+  subscribers:
+  - id, email, name
+  - subscribed_at, is_active
+
+  sessions:
+  - id, title, description
+  - event_date, meeting_link
+
+  recordings:
+  - id, title, youtube_id
+  - recorded_date, description
+
+  feedback:
+  - id, name, email, message
+  - submitted_at, is_read
+
+  projects:
+  - id, name, description
+  - status, url, category
+end note
+
+note left of [Email Service]
+  Automated Emails:
+  - Welcome email
+  - Event reminders
+  - Recording notifications
+  - Newsletter
+end note
+
+@enduml

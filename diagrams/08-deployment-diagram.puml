@@ -1,0 +1,119 @@
+@startuml Deployment Diagram
+
+skinparam node {
+  BackgroundColor<<netlify>> #10b981
+  BackgroundColor<<render>> #3b82f6
+  BackgroundColor<<godaddy>> #f59e0b
+  BackgroundColor<<github>> #8b5cf6
+  BorderColor #1e293b
+}
+
+title Deployment Architecture - gocaving.ai (Current)
+
+node "Developer Workstation" {
+  [VS Code]
+  [Git Client]
+  [WSL2/Ubuntu]
+}
+
+node "GitHub" <<github>> {
+  artifact "Repository" {
+    [index.html]
+    [script.js]
+    [assets/images/]
+    [netlify.toml]
+  }
+  [GitHub Actions]
+}
+
+node "GoDaddy" <<godaddy>> {
+  [DNS Server] {
+    [A Record: 75.2.60.5]
+    [CNAME: www]
+  }
+}
+
+cloud "Netlify" <<netlify>> {
+  node "Build System" {
+    [Build Agent]
+    [Deploy Pipeline]
+  }
+
+  node "Global CDN" {
+    [Edge Node - US East]
+    [Edge Node - US West]
+    [Edge Node - Europe]
+    [Edge Node - Asia]
+  }
+
+  node "Services" {
+    [Forms Service]
+    [SSL/TLS]
+    [Analytics]
+  }
+
+  database "Form Storage" {
+    [Submissions DB]
+  }
+}
+
+' Deployment Flow
+[VS Code] --> [Git Client] : Edit files
+[Git Client] --> [Repository] : git push
+[Repository] --> [GitHub Actions] : Trigger webhook
+[GitHub Actions] --> [Build Agent] : Notify new commit
+[Build Agent] --> [Repository] : Pull code
+[Build Agent] --> [Deploy Pipeline] : Build & deploy
+[Deploy Pipeline] --> [Edge Node - US East] : Distribute
+[Deploy Pipeline] --> [Edge Node - US West] : Distribute
+[Deploy Pipeline] --> [Edge Node - Europe] : Distribute
+[Deploy Pipeline] --> [Edge Node - Asia] : Distribute
+
+' User Access Flow
+[DNS Server] --> [Edge Node - US East] : Resolve gocaving.ai
+[Edge Node - US East] --> [SSL/TLS] : HTTPS connection
+[Edge Node - US East] --> [Forms Service] : Form submissions
+[Forms Service] --> [Submissions DB] : Store data
+
+note right of [Build Agent]
+  Build Process:
+  1. Git clone repo
+  2. Copy static files
+  3. No build command (pure HTML)
+  4. Deploy to CDN
+
+  Deploy Time: 30-60 seconds
+end note
+
+note left of [DNS Server]
+  DNS Configuration:
+
+  Type: A
+  Name: @
+  Value: 75.2.60.5
+
+  Type: CNAME
+  Name: www
+  Value: gocaving-ai.netlify.app
+end note
+
+note bottom of [Edge Node - US East]
+  CDN Features:
+  - Global distribution
+  - Auto-scaling
+  - DDoS protection
+  - Asset caching
+  - Instant invalidation
+  - HTTP/2 & HTTP/3
+end note
+
+note right of [Forms Service]
+  Form Processing:
+  - Spam detection
+  - Data validation
+  - Email notifications
+  - CSV export
+  - 100 submissions/month (free)
+end note
+
+@enduml

@@ -1,0 +1,200 @@
+@startuml Future AI Architecture - Advanced System
+
+skinparam component {
+  BackgroundColor<<frontend>> #10b981
+  BackgroundColor<<backend>> #3b82f6
+  BackgroundColor<<ai>> #ec4899
+  BackgroundColor<<database>> #f59e0b
+  BackgroundColor<<mcp>> #8b5cf6
+  BorderColor #1e293b
+}
+
+title gocaving.ai - Future AI-Integrated Architecture
+
+package "User Interfaces" {
+  [Web App] <<frontend>>
+  [Mobile App] <<frontend>>
+  [CLI Tool] <<frontend>>
+}
+
+package "API Gateway" {
+  [Kong/NGINX] <<backend>>
+  component "API Routes" {
+    [REST API]
+    [GraphQL API]
+    [WebSocket]
+  }
+}
+
+package "Backend Services" {
+  component "Core Services" <<backend>> {
+    [User Service]
+    [Session Service]
+    [Project Service]
+    [Survey Service]
+  }
+
+  component "AI Services" <<ai>> {
+    [Cave Data Analyzer]
+    [Survey Processor]
+    [Image Recognition]
+    [Natural Language]
+  }
+
+  component "MCP Server" <<mcp>> {
+    [MCP Protocol Handler]
+    [Tool Registry]
+    [Context Manager]
+    [Session State]
+  }
+}
+
+package "AI Agents & LLMs" {
+  component "Agent Orchestrator" <<ai>> {
+    [Task Planner]
+    [Agent Router]
+    [Result Aggregator]
+  }
+
+  component "Specialized Agents" <<ai>> {
+    [Survey Analysis Agent]
+    [Data Cleaning Agent]
+    [Visualization Agent]
+    [Report Generator Agent]
+    [Cave Mapper Agent]
+  }
+
+  [Claude API\n(Anthropic)] <<ai>>
+  [OpenAI API] <<ai>>
+  [Local LLM\n(Ollama)] <<ai>>
+}
+
+package "MCP Tools & Resources" {
+  component "Cave Tools" <<mcp>> {
+    [Survey Data Tool]
+    [QGIS Integration]
+    [TopoDroid Parser]
+    [Compass Tool]
+  }
+
+  component "AI Tools" <<mcp>> {
+    [Vector Search]
+    [Embeddings]
+    [RAG Pipeline]
+    [Knowledge Base]
+  }
+
+  component "Data Resources" <<mcp>> {
+    [Cave Database Access]
+    [File System Access]
+    [GitHub Integration]
+    [Image Storage]
+  }
+}
+
+package "Databases & Storage" {
+  database "PostgreSQL" <<database>> {
+    [Users & Projects]
+    [Survey Data]
+    [Sessions]
+  }
+
+  database "Vector DB\n(Pinecone/Weaviate)" <<database>> {
+    [Cave Embeddings]
+    [Survey Embeddings]
+    [Document Chunks]
+  }
+
+  [S3/Object Storage] <<database>>
+  [Redis Cache] <<database>>
+}
+
+package "External Services" {
+  [Email Service]
+  [Analytics]
+  [Monitoring]
+  [GitHub API]
+}
+
+' Main Flow Relationships
+[Web App] --> [Kong/NGINX]
+[Mobile App] --> [Kong/NGINX]
+[CLI Tool] --> [Kong/NGINX]
+
+[Kong/NGINX] --> [REST API]
+[Kong/NGINX] --> [GraphQL API]
+[Kong/NGINX] --> [WebSocket]
+
+[REST API] --> [Core Services]
+[REST API] --> [AI Services]
+[REST API] --> [MCP Server]
+
+[Core Services] --> [PostgreSQL]
+[AI Services] --> [Agent Orchestrator]
+[AI Services] --> [Vector DB\n(Pinecone/Weaviate)]
+
+[Agent Orchestrator] --> [Specialized Agents]
+[Specialized Agents] --> [Claude API\n(Anthropic)]
+[Specialized Agents] --> [OpenAI API]
+[Specialized Agents] --> [Local LLM\n(Ollama)]
+
+[MCP Server] --> [Cave Tools]
+[MCP Server] --> [AI Tools]
+[MCP Server] --> [Data Resources]
+
+[Specialized Agents] --> [MCP Server] : Use tools via MCP
+[Cave Tools] --> [PostgreSQL] : Query data
+[Data Resources] --> [S3/Object Storage] : Access files
+
+note right of [MCP Server]
+  Model Context Protocol:
+  - Standardized tool interface
+  - Context sharing across agents
+  - Stateful sessions
+  - Tool discovery
+  - Resource management
+end note
+
+note right of [Specialized Agents]
+  AI Agent Capabilities:
+
+  Survey Analysis Agent:
+  - Parse survey files
+  - Detect errors
+  - Suggest corrections
+  - Generate statistics
+
+  Cave Mapper Agent:
+  - Convert formats
+  - Create visualizations
+  - 3D rendering
+  - GIS integration
+
+  Data Cleaning Agent:
+  - Identify anomalies
+  - Fix station names
+  - Validate measurements
+  - Merge datasets
+end note
+
+note left of [Cave Tools]
+  MCP Tool Examples:
+
+  survey_data_tool:
+  - Read TopoDroid files
+  - Parse Compass data
+  - Validate format
+  - Extract metadata
+
+  qgis_integration:
+  - Export to shapefile
+  - Generate map layers
+  - Apply styling
+
+  vector_search:
+  - Semantic search caves
+  - Find similar passages
+  - Retrieve context
+end note
+
+@enduml

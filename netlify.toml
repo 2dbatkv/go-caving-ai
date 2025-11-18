@@ -2,11 +2,7 @@
 
 [build]
   # No build command needed for static site
-  publish = "."
-
-# Form handling configuration
-[build.processing.html]
-  pretty_urls = true
+  publish = "/"
 
 # Headers for security and performance
 [[headers]]

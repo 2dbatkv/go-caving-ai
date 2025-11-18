@@ -60,15 +60,27 @@
     <main class="max-w-5xl mx-auto px-6 py-12">
 
         <!-- Hero Section -->
-        <section class="mb-16">
-            <div class="text-center mb-8">
-                <h2 class="text-5xl font-bold mb-4">
-                    AI in <span class="text-cave-emerald">Caving</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Join us for online discussions exploring artificial intelligence, data science, and innovative technology for cave exploration and survey analysis.
-                </p>
+        <section class="mb-16 -mx-6 px-6 py-16 relative overflow-hidden rounded-lg">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/hero-caving.jpg"
+                     alt="Cave exploration"
+                     class="w-full h-full object-cover"
+                     loading="eager">
+                <!-- Dark overlay for text readability -->
+                <div class="absolute inset-0 bg-gradient-to-b from-cave-dark/80 via-cave-dark/70 to-cave-dark/90"></div>
             </div>
+
+            <!-- Content -->
+            <div class="relative z-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-5xl font-bold mb-4 drop-shadow-lg">
+                        AI in <span class="text-cave-emerald">Caving</span>
+                    </h2>
+                    <p class="text-xl text-gray-100 max-w-3xl mx-auto drop-shadow-md">
+                        Join us for online discussions exploring artificial intelligence, data science, and innovative technology for cave exploration and survey analysis.
+                    </p>
+                </div>
 
             <!-- Email Signup Form -->
             <div class="card max-w-md mx-auto p-8 glow-border">
@@ -100,6 +112,7 @@
                         Subscribe
                     </button>
                 </form>
+            </div>
             </div>
         </section>
 

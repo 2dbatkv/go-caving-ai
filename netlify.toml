@@ -1,7 +1,7 @@
 [build]
   base = ""
   publish = ""
-  command = ""
+  command = "echo 'Building site...'"
 
 # Enable form detection
 [build.processing]

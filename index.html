@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI in Caving - Online discussion series exploring artificial intelligence, data science, and technology in cave exploration.">
+    <title>gocaving.ai - AI in Caving</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cave-dark': '#0f172a',
+                        'cave-slate': '#1e293b',
+                        'cave-emerald': '#10b981',
+                        'cave-emerald-light': '#34d399',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .glow-border {
+            transition: all 0.3s ease;
+        }
+        .glow-border:hover {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            border-color: #34d399;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+    </style>
+</head>
+<body class="text-gray-100 font-sans antialiased">
+
+    <!-- Header -->
+    <header class="py-6 border-b border-gray-700/50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-2xl font-bold">
+                <span class="text-cave-emerald">go</span><span class="text-white">caving</span><span class="text-gray-400">.ai</span>
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-5xl font-bold mb-4">
+                    AI in <span class="text-cave-emerald">Caving</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Join us for online discussions exploring artificial intelligence, data science, and innovative technology for cave exploration and survey analysis.
+                </p>
+            </div>
+
+            <!-- Email Signup Form -->
+            <div class="card max-w-md mx-auto p-8 glow-border">
+                <h3 class="text-2xl font-semibold mb-4 text-center text-cave-emerald-light">Get Updates</h3>
+                <p class="text-gray-300 mb-6 text-center">Subscribe to receive notifications about upcoming discussions and recordings.</p>
+
+                <form name="email-updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                    <!-- Honeypot field for spam prevention -->
+                    <input type="hidden" name="form-name" value="email-updates">
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name (optional)</label>
+                        <input type="text" id="name" name="name"
+                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
+                               placeholder="your@email.com">
+                    </div>
+
+                    <button type="submit"
+                            class="w-full bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Upcoming Discussions Section -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-center">
+                <span class="text-cave-emerald">Upcoming</span> Discussions
+            </h3>
+
+            <div class="space-y-6">
+                <!-- Discussion Card 1 -->
+                <div class="card p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-cave-emerald font-mono text-sm">Tuesday, November 18, 2025 • 7:00 PM</span>
+                                <span class="text-gray-500">•</span>
+                                <span class="text-gray-400 text-sm">Eastern Time</span>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2 text-white">Caving Software and AI</h4>
+                            <p class="text-gray-300 mb-3">Interested in how cave survey software is created? Interested in how AI can be used to generate applications and analyze cave survey data?</p>
+                            <p class="text-gray-300 mb-3">Join me (Aaron Bird) and Philip Schuchardt for a discussion on software design process, vibe coding with AI, preferred coding and scripting languages, and anything else that comes up.</p>
+                            <p class="text-gray-300 text-sm italic">Sounds really nerdy? Yup. Pretty much is. But now is the time when this kind of nerdy is available to everyone. Anyone (everyone!) with good questions, some patience, a computer, and internet connection can make use of these modern technologies. And, yes, that means you, too.</p>
+                        </div>
+                        <div class="md:text-right md:min-w-[140px]">
+                            <a href="https://us06web.zoom.us/j/83454859193?pwd=3959k9aECggXsZaXwRl5Zpy4xuhwtO.1"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="inline-block bg-cave-emerald/20 hover:bg-cave-emerald/30 text-cave-emerald-light font-semibold py-2 px-6 rounded-lg border border-cave-emerald/40 transition hover:scale-105">
+                                Join on Zoom
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more discussion cards here as future events are scheduled -->
+            </div>
+        </section>
+
+        <!-- Past Recordings Section -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-center">
+                <span class="text-cave-emerald">Past</span> Recordings
+            </h3>
+
+            <div class="card p-12 text-center">
+                <svg class="w-20 h-20 mx-auto mb-4 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
+                </svg>
+                <h4 class="text-xl font-semibold mb-3 text-white">No Recordings Yet</h4>
+                <p class="text-gray-300 max-w-xl mx-auto">This is the first discussion in the series! Check back after November 18th to watch the recording of "Caving Software and AI".</p>
+                <p class="text-gray-400 text-sm mt-4">Subscribe above to get notified when recordings are available.</p>
+            </div>
+
+            <!-- Future recordings will be added here as cards -->
+        </section>
+
+        <!-- Feedback Section -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-center">
+                <span class="text-cave-emerald">Comments</span> & Feedback
+            </h3>
+
+            <div class="card max-w-2xl mx-auto p-8">
+                <p class="text-gray-300 mb-6 text-center">Have suggestions for topics? Questions about the series? We'd love to hear from you.</p>
+
+                <form name="ai-caving-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                    <!-- Honeypot field for spam prevention -->
+                    <input type="hidden" name="form-name" value="ai-caving-feedback">
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="feedback-name" class="block text-sm font-medium text-gray-300 mb-2">Name (optional)</label>
+                            <input type="text" id="feedback-name" name="name"
+                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
+                        </div>
+
+                        <div>
+                            <label for="feedback-email" class="block text-sm font-medium text-gray-300 mb-2">Email (optional)</label>
+                            <input type="email" id="feedback-email" name="email"
+                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
+                                   placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message *</label>
+                        <textarea id="message" name="message" required rows="5"
+                                  class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition resize-none"
+                                  placeholder="Your thoughts, suggestions, or questions..."></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="w-full bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                        Send Feedback
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-700/50 py-8 mt-16">
+        <div class="max-w-5xl mx-auto px-6 text-center text-gray-400 text-sm">
+            <p class="mb-2">&copy; 2025 gocaving.ai - AI in Caving Discussion Series</p>
+            <p class="text-xs text-gray-500">Built with ❤️ for the caving community • Hosted on Netlify</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script src="script.js"></script>
+
+</body>
+</html>

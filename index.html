@@ -134,30 +134,13 @@
                     <span class="text-cave-emerald">Upcoming</span> Discussions
                 </h3>
 
-                <div class="space-y-6">
-                <!-- Discussion Card 1 -->
-                <div class="card p-6">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-3 mb-2">
-                                <span class="text-cave-emerald font-mono text-sm">Tuesday, November 18, 2025 • 7:00 PM</span>
-                                <span class="text-gray-500">•</span>
-                                <span class="text-gray-400 text-sm">Eastern Time</span>
-                            </div>
-                            <h4 class="text-xl font-semibold mb-2 text-white">Caving Software and AI</h4>
-                            <p class="text-gray-300 mb-3">Interested in how cave survey software is created? Interested in how AI can be used to generate applications and analyze cave survey data?</p>
-                            <p class="text-gray-300 mb-3">Join me (Aaron Bird) and Philip Schuchardt for a discussion on software design process, vibe coding with AI, preferred coding and scripting languages, and anything else that comes up.</p>
-                            <p class="text-gray-300 text-sm italic">Sounds really nerdy? Yup. Pretty much is. But now is the time when this kind of nerdy is available to everyone. Anyone (everyone!) with good questions, some patience, a computer, and internet connection can make use of these modern technologies. And, yes, that means you, too.</p>
-                        </div>
-                        <div class="md:text-right md:min-w-[140px]">
-                            <a href="https://us06web.zoom.us/j/83454859193?pwd=3959k9aECggXsZaXwRl5Zpy4xuhwtO.1"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="inline-block bg-cave-emerald/20 hover:bg-cave-emerald/30 text-cave-emerald-light font-semibold py-2 px-6 rounded-lg border border-cave-emerald/40 transition hover:scale-105">
-                                Join on Zoom
-                            </a>
-                        </div>
-                    </div>
+                <div class="card p-12 text-center">
+                    <svg class="w-20 h-20 mx-auto mb-4 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                    </svg>
+                    <h4 class="text-xl font-semibold mb-3 text-white">No Upcoming Discussions Scheduled</h4>
+                    <p class="text-gray-300 max-w-xl mx-auto">We're planning our next discussion! Subscribe above to get notified when we announce the next session.</p>
+                    <p class="text-gray-400 text-sm mt-4">In the meantime, check out the recording from our first discussion below.</p>
                 </div>
 
                 <!-- Add more discussion cards here as future events are scheduled -->
@@ -275,13 +258,48 @@
                     <span class="text-cave-emerald">Past</span> Recordings
                 </h3>
 
-                <div class="card p-12 text-center">
-                <svg class="w-20 h-20 mx-auto mb-4 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
-                </svg>
-                <h4 class="text-xl font-semibold mb-3 text-white">No Recordings Yet</h4>
-                <p class="text-gray-300 max-w-xl mx-auto">This is the first discussion in the series! Check back after November 18th to watch the recording of "Caving Software and AI".</p>
-                <p class="text-gray-400 text-sm mt-4">Subscribe above to get notified when recordings are available.</p>
+                <!-- Recording 1: Caving Software and AI -->
+                <div class="card p-6 mb-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Video Player -->
+                        <div class="lg:col-span-2">
+                            <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                <iframe
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                    src="https://www.youtube.com/embed/j1pbNItf42A"
+                                    title="Caving Software and AI - gocaving.ai Discussion"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen
+                                    class="rounded-lg">
+                                </iframe>
+                            </div>
+                        </div>
+
+                        <!-- Video Details -->
+                        <div class="flex flex-col justify-center">
+                            <div class="mb-3">
+                                <span class="text-cave-emerald font-mono text-sm">November 18, 2025</span>
+                            </div>
+                            <h4 class="text-2xl font-semibold mb-3 text-white">Caving Software and AI</h4>
+                            <p class="text-gray-300 mb-4">Join Aaron Bird and Philip Schuchardt for an engaging discussion on cave survey software design, vibe coding with AI, and how modern technology is making technical work accessible to everyone in the caving community.</p>
+                            <div class="space-y-2 text-sm text-gray-400">
+                                <p><strong class="text-cave-emerald-light">Topics covered:</strong></p>
+                                <ul class="list-disc list-inside space-y-1 ml-2">
+                                    <li>Software design process for cave surveying tools</li>
+                                    <li>AI-assisted coding and development</li>
+                                    <li>Preferred languages and scripting tools</li>
+                                    <li>Making technical work accessible to cavers</li>
+                                </ul>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=j1pbNItf42A"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="inline-block mt-4 text-cave-emerald-light hover:text-cave-emerald text-sm font-medium transition">
+                                Watch on YouTube →
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Future recordings will be added here as cards -->

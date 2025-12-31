@@ -2,27 +2,104 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Form submission handling with user feedback
-    const forms = document.querySelectorAll('form[data-netlify]');
+    // Email subscription form handling
+    const subscribeForm = document.getElementById('email-updates-form');
+    const subscribeStatus = document.getElementById('subscribe-status');
+    const subscribeBtn = document.getElementById('subscribe-btn');
 
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            // Netlify handles the actual submission
-            // This just provides visual feedback
-            const submitButton = form.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-            submitButton.textContent = 'Submitting...';
-            submitButton.disabled = true;
+            const formData = new FormData(subscribeForm);
+            const originalText = subscribeBtn.textContent;
 
-            // Note: In production with Netlify, the form will redirect or show success
-            // This is just for local testing feedback
-            setTimeout(() => {
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }, 2000);
+            // Update button state
+            subscribeBtn.textContent = 'Subscribing...';
+            subscribeBtn.disabled = true;
+            subscribeStatus.classList.add('hidden');
+
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMessage(subscribeStatus, result.message, 'success');
+                    subscribeForm.reset();
+                } else {
+                    showMessage(subscribeStatus, result.message, 'error');
+                }
+            } catch (error) {
+                showMessage(subscribeStatus, 'An error occurred. Please try again.', 'error');
+            } finally {
+                subscribeBtn.textContent = originalText;
+                subscribeBtn.disabled = false;
+            }
         });
-    });
+    }
+
+    // Feedback form handling
+    const feedbackForm = document.getElementById('feedback-form');
+    const feedbackStatus = document.getElementById('feedback-status');
+    const feedbackBtn = document.getElementById('feedback-btn');
+
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(feedbackForm);
+            const originalText = feedbackBtn.textContent;
+
+            // Update button state
+            feedbackBtn.textContent = 'Sending...';
+            feedbackBtn.disabled = true;
+            feedbackStatus.classList.add('hidden');
+
+            try {
+                const response = await fetch('/api/feedback', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMessage(feedbackStatus, result.message, 'success');
+                    feedbackForm.reset();
+                } else {
+                    showMessage(feedbackStatus, result.message, 'error');
+                }
+            } catch (error) {
+                showMessage(feedbackStatus, 'An error occurred. Please try again.', 'error');
+            } finally {
+                feedbackBtn.textContent = originalText;
+                feedbackBtn.disabled = false;
+            }
+        });
+    }
+
+    // Helper function to show status messages
+    function showMessage(element, message, type) {
+        element.textContent = message;
+        element.classList.remove('hidden');
+
+        if (type === 'success') {
+            element.className = 'mb-4 p-4 rounded-lg bg-green-900/50 border border-green-500 text-green-200';
+        } else {
+            element.className = 'mb-4 p-4 rounded-lg bg-red-900/50 border border-red-500 text-red-200';
+        }
+
+        // Auto-hide success messages after 5 seconds
+        if (type === 'success') {
+            setTimeout(() => {
+                element.classList.add('hidden');
+            }, 5000);
+        }
+    }
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

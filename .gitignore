@@ -1,6 +1,7 @@
 # OS files
 .DS_Store
 Thumbs.db
+*:Zone.Identifier
 
 # Editor directories and files
 .vscode/
@@ -15,6 +16,11 @@ Thumbs.db
 # Environment files
 .env
 .env.local
+.dev.vars
+
+# CloudFlare
+.wrangler/
+wrangler.toml
 
 # Logs
 *.log

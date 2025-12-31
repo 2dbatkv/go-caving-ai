@@ -87,9 +87,11 @@
                 <h3 class="text-2xl font-semibold mb-4 text-center text-cave-emerald-light">Get Updates</h3>
                 <p class="text-gray-300 mb-6 text-center">Subscribe to receive notifications about upcoming discussions and recordings.</p>
 
-                <form name="email-updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                <!-- Status message -->
+                <div id="subscribe-status" class="mb-4 hidden"></div>
+
+                <form id="email-updates-form" class="space-y-4">
                     <!-- Honeypot field for spam prevention -->
-                    <input type="hidden" name="form-name" value="email-updates">
                     <p class="hidden">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
@@ -107,7 +109,7 @@
                                placeholder="your@email.com">
                     </div>
 
-                    <button type="submit"
+                    <button type="submit" id="subscribe-btn"
                             class="w-full bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
                         Subscribe
                     </button>
@@ -340,9 +342,11 @@
             <div class="card max-w-2xl mx-auto p-8">
                 <p class="text-gray-300 mb-6 text-center">Have suggestions for topics? Questions about the series? We'd love to hear from you.</p>
 
-                <form name="ai-caving-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                <!-- Status message -->
+                <div id="feedback-status" class="mb-4 hidden"></div>
+
+                <form id="feedback-form" class="space-y-4">
                     <!-- Honeypot field for spam prevention -->
-                    <input type="hidden" name="form-name" value="ai-caving-feedback">
                     <p class="hidden">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
@@ -369,7 +373,7 @@
                                   placeholder="Your thoughts, suggestions, or questions..."></textarea>
                     </div>
 
-                    <button type="submit"
+                    <button type="submit" id="feedback-btn"
                             class="w-full bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
                         Send Feedback
                     </button>
@@ -383,7 +387,7 @@
     <footer class="border-t border-gray-700/50 py-8 mt-16">
         <div class="max-w-5xl mx-auto px-6 text-center text-gray-400 text-sm">
             <p class="mb-2">&copy; 2025 gocaving.ai - AI in Caving Discussion Series</p>
-            <p class="text-xs text-gray-500">Built with ❤️ for the caving community • Hosted on Netlify</p>
+            <p class="text-xs text-gray-500">Built with ❤️ for the caving community • Hosted on CloudFlare Pages</p>
         </div>
     </footer>
 

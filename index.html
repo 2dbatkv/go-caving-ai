@@ -1,398 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI in Caving - Online discussion series exploring artificial intelligence, data science, and technology in cave exploration.">
-    <meta name="author" content="Aaron Bird">
-    <title>gocaving.ai - AI in Caving</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'cave-dark': '#0f172a',
-                        'cave-slate': '#1e293b',
-                        'cave-emerald': '#10b981',
-                        'cave-emerald-light': '#34d399',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
-        .glow-border {
-            transition: all 0.3s ease;
-        }
-        .glow-border:hover {
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
-            border-color: #34d399;
-        }
-        .card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(16, 185, 129, 0.4);
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gocaving.ai</title>
+<meta name="description" content="gocaving.ai is being rebuilt.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #DCE0D9;
+    --paper-deep: #CDD3CB;
+    --ink: #1C231E;
+    --mid: #5F6B60;
+    --water: #1F5A72;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans Condensed", "Segoe UI", system-ui, sans-serif;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+  }
+
+  /* faint survey grid, like notebook paper */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--paper-deep) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-deep) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: .55;
+    pointer-events: none;
+  }
+
+  main {
+    position: relative;
+    width: 100%;
+    max-width: 46rem;
+  }
+
+  .plot { width: 100%; height: auto; display: block; margin-bottom: 2.5rem; overflow: visible; }
+
+  .line { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .line--branch { stroke-width: 1.5; }
+  .lead { fill: none; stroke: var(--water); stroke-width: 2; stroke-dasharray: 6 7; stroke-linecap: round; }
+  .station { fill: var(--ink); }
+  .station--end { fill: var(--paper); stroke: var(--water); stroke-width: 2.5; }
+  .mark {
+    fill: var(--water);
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+  }
+
+  h1 {
+    font-size: clamp(2.6rem, 9vw, 4.6rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    margin: 0 0 1.25rem;
+  }
+
+  p {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    line-height: 1.55;
+    max-width: 34ch;
+    margin: 0 0 0.9rem;
+    color: var(--mid);
+  }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--paper-deep);
+    font-size: 0.9rem;
+    color: var(--mid);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .draw {
+      stroke-dasharray: var(--len);
+      stroke-dashoffset: var(--len);
+      animation: draw 2.2s cubic-bezier(.5,.05,.35,1) forwards;
+    }
+    .line--branch { animation-delay: 1.1s; }
+    .lead {
+      opacity: 0;
+      animation: appear .6s ease 2.3s forwards;
+    }
+    .station, .mark { opacity: 0; animation: appear .5s ease forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes appear { to { opacity: 1; } }
+  }
+</style>
 </head>
-<body class="text-gray-100 font-sans antialiased">
+<body>
+<main>
+  <svg class="plot" viewBox="0 0 800 230" role="img" aria-label="A cave survey line plot ending in an unsurveyed lead.">
+    <!-- main passage -->
+    <polyline class="line draw" style="--len: 780; animation-delay: .2s"
+      points="20,168 72,158 112,176 156,146 200,156 238,124 288,138 326,110 370,118 414,90 460,100 500,74 546,84 590,62 636,70 676,52 716,58"/>
+    <!-- side lead, surveyed -->
+    <polyline class="line line--branch draw" style="--len: 200"
+      points="414,90 434,128 462,158 480,200"/>
+    <!-- going lead, unsurveyed -->
+    <path class="lead" d="M716,58 L768,42"/>
 
-    <!-- Header -->
-    <header class="py-6 border-b border-gray-700/50">
-        <div class="max-w-5xl mx-auto px-6">
-            <h1 class="text-2xl font-bold">
-                <span class="text-cave-emerald">go</span><span class="text-white">caving</span><span class="text-gray-400">.ai</span>
-            </h1>
-        </div>
-    </header>
+    <g class="station">
+      <circle cx="20" cy="168" r="3.5" style="animation-delay: .3s"/>
+      <circle cx="156" cy="146" r="3.5" style="animation-delay: .7s"/>
+      <circle cx="288" cy="138" r="3.5" style="animation-delay: 1s"/>
+      <circle cx="414" cy="90" r="3.5" style="animation-delay: 1.3s"/>
+      <circle cx="546" cy="84" r="3.5" style="animation-delay: 1.7s"/>
+      <circle cx="480" cy="200" r="3.5" style="animation-delay: 2s"/>
+    </g>
+    <circle class="station station--end" cx="716" cy="58" r="6" style="animation-delay: 2.2s"/>
+    <text class="mark" x="778" y="38" style="animation-delay: 2.6s">?</text>
+  </svg>
 
-    <!-- Main Content -->
-    <main class="max-w-5xl mx-auto px-6 py-12">
+  <h1>Under construction</h1>
+  <p>gocaving.ai is being rebuilt. The discussion series, recordings, and project tools will be back here.</p>
 
-        <!-- Hero Section -->
-        <section class="mb-16 -mx-6 px-6 py-16 relative overflow-hidden rounded-lg">
-            <!-- Background Image -->
-            <div class="absolute inset-0 z-0">
-                <img src="assets/images/hero-caving.jpg"
-                     alt="Cave exploration"
-                     class="w-full h-full object-cover"
-                     loading="eager">
-                <!-- Dark overlay for text readability -->
-                <div class="absolute inset-0 bg-gradient-to-b from-cave-dark/80 via-cave-dark/70 to-cave-dark/90"></div>
-            </div>
-
-            <!-- Content -->
-            <div class="relative z-10">
-                <div class="text-center mb-8">
-                    <h2 class="text-5xl font-bold mb-4 drop-shadow-lg">
-                        AI in <span class="text-cave-emerald">Caving</span>
-                    </h2>
-                    <p class="text-xl text-gray-100 max-w-3xl mx-auto drop-shadow-md">
-                        Join us for online discussions exploring artificial intelligence, data science, and innovative technology for cave exploration and survey analysis.
-                    </p>
-                </div>
-
-            <!-- Email Signup Form -->
-            <div class="card max-w-md mx-auto p-8 glow-border">
-                <h3 class="text-2xl font-semibold mb-4 text-center text-cave-emerald-light">Get Updates</h3>
-                <p class="text-gray-300 mb-6 text-center">Subscribe to receive notifications about upcoming discussions and recordings.</p>
-
-                <!-- Status message -->
-                <div id="subscribe-status" class="mb-4 hidden"></div>
-
-                <form id="email-updates-form" class="space-y-4">
-                    <!-- Honeypot field for spam prevention -->
-                    <p class="hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
-
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name (optional)</label>
-                        <input type="text" id="name" name="name"
-                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
-                    </div>
-
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email *</label>
-                        <input type="email" id="email" name="email" required
-                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
-                               placeholder="your@email.com">
-                    </div>
-
-                    <button type="submit" id="subscribe-btn"
-                            class="w-full bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-            </div>
-        </section>
-
-        <!-- Upcoming Discussions Section -->
-        <section class="mb-16 -mx-6 px-6 py-20 relative overflow-hidden rounded-lg">
-            <!-- Background Image -->
-            <div class="absolute inset-0 z-0">
-                <img src="assets/images/discussions-bg.jpg"
-                     alt="Cave exploration"
-                     class="w-full h-full object-cover"
-                     style="transform: scale(1.3);"
-                     loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-b from-cave-dark/70 via-cave-dark/65 to-cave-dark/75"></div>
-            </div>
-
-            <!-- Content -->
-            <div class="relative z-10">
-                <h3 class="text-3xl font-bold mb-8 text-center drop-shadow-lg">
-                    <span class="text-cave-emerald">Upcoming</span> Discussions
-                </h3>
-
-                <div class="space-y-6">
-                <!-- Discussion Card 1 -->
-                <div class="card p-6">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-3 mb-2">
-                                <span class="text-cave-emerald font-mono text-sm">Tuesday, December 9, 2025 • 8:00 PM</span>
-                                <span class="text-gray-500">•</span>
-                                <span class="text-gray-400 text-sm">Eastern Time</span>
-                            </div>
-                            <h4 class="text-xl font-semibold mb-3 text-white">Democratizing Cave Survey and Cartography</h4>
-                            <p class="text-gray-300 mb-3">Modern tools like DistoX2, BRIC-4 and BRIC-5, digital sketching, and AI-supported applications are expanding who can participate in cave surveying. But how do we open cave mapping to more people without lowering data quality?</p>
-                            <div class="mb-3">
-                                <p class="text-gray-300 font-medium mb-2">Join us to discuss:</p>
-                                <ul class="list-disc list-inside space-y-1 text-gray-400 text-sm ml-2">
-                                    <li>Opening cave mapping to more people while maintaining data quality</li>
-                                    <li>Crowdsourcing cave maps: opportunities, risks, and required guardrails</li>
-                                    <li>Reducing the "bus factor of 1" in cave cartography</li>
-                                    <li>Integrating beginner-friendly workflows with expert-level accuracy</li>
-                                    <li>How AI can help eliminate bottlenecks in large cave projects</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="md:text-right md:min-w-[140px]">
-                            <a href="https://us06web.zoom.us/j/85163958864?pwd=Wu5Q6bOfDfbbptBgWILKyaCNXQI6Um.1"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="inline-block bg-cave-emerald/20 hover:bg-cave-emerald/30 text-cave-emerald-light font-semibold py-2 px-6 rounded-lg border border-cave-emerald/40 transition hover:scale-105">
-                                Join on Zoom
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add more discussion cards here as future events are scheduled -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="mb-16 -mx-6 px-6 py-20 relative overflow-hidden rounded-lg">
-            <!-- Background Image -->
-            <div class="absolute inset-0 z-0">
-                <img src="assets/images/projects-bg.jpg"
-                     alt="Cave passage"
-                     class="w-full h-full object-cover"
-                     style="transform: scale(1.3);"
-                     loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-b from-cave-dark/70 via-cave-dark/65 to-cave-dark/75"></div>
-            </div>
-
-            <!-- Content -->
-            <div class="relative z-10">
-                <h3 class="text-3xl font-bold mb-8 text-center drop-shadow-lg">
-                    <span class="text-cave-emerald">Projects</span> & Tools
-                </h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- In Progress Column -->
-                <div>
-                    <h4 class="text-xl font-semibold mb-4 text-cave-emerald-light flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                        </svg>
-                        In Progress
-                    </h4>
-
-                    <div class="space-y-4">
-                        <!-- Lewis Cave Mapper -->
-                        <div class="card p-5">
-                            <h5 class="text-lg font-semibold mb-2 text-white">Lewis Cave Mapper</h5>
-                            <p class="text-gray-400 text-sm mb-3">Interactive cave survey mapping tool</p>
-                            <div class="mb-3 p-2 bg-cave-dark/50 rounded text-xs font-mono text-gray-400">
-                                <div>Username: <span class="text-cave-emerald">name</span></div>
-                                <div>Password: <span class="text-cave-emerald">name1234</span></div>
-                            </div>
-                            <a href="https://glowing-toffee-6552e3.netlify.app/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="inline-block text-cave-emerald-light hover:text-cave-emerald text-sm font-medium transition">
-                                Launch App →
-                            </a>
-                        </div>
-
-                        <!-- Cave Project Manager -->
-                        <div class="card p-5">
-                            <h5 class="text-lg font-semibold mb-2 text-white">Cave Project Manager</h5>
-                            <p class="text-gray-400 text-sm mb-3">Manage cave exploration projects and expeditions</p>
-                            <a href="https://ckkc-exped-management.onrender.com/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="inline-block text-cave-emerald-light hover:text-cave-emerald text-sm font-medium transition">
-                                Launch App →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Roadmap Column -->
-                <div>
-                    <h4 class="text-xl font-semibold mb-4 text-cave-emerald-light flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
-                        </svg>
-                        Roadmap
-                    </h4>
-
-                    <div class="space-y-4">
-                        <!-- Roadmap Item 1 -->
-                        <div class="card p-5 border-dashed">
-                            <h5 class="text-lg font-semibold mb-2 text-gray-300">Cave Trip Scheduler</h5>
-                            <p class="text-gray-400 text-sm">Plan and coordinate caving trips with your team</p>
-                        </div>
-
-                        <!-- Roadmap Item 2 -->
-                        <div class="card p-5 border-dashed">
-                            <h5 class="text-lg font-semibold mb-2 text-gray-300">Smart Search</h5>
-                            <p class="text-gray-400 text-sm">AI-powered search across cave data and survey records</p>
-                        </div>
-
-                        <!-- Roadmap Item 3 -->
-                        <div class="card p-5 border-dashed">
-                            <h5 class="text-lg font-semibold mb-2 text-gray-300">Manage Your Own Data & Projects</h5>
-                            <p class="text-gray-400 text-sm">Personal workspace for your cave exploration data</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Past Recordings Section -->
-        <section class="mb-16 -mx-6 px-6 py-20 relative overflow-hidden rounded-lg">
-            <!-- Background Image -->
-            <div class="absolute inset-0 z-0">
-                <img src="assets/images/recordings-bg.jpg"
-                     alt="Cave formations"
-                     class="w-full h-full object-cover"
-                     style="transform: scale(1.3);"
-                     loading="lazy">
-                <div class="absolute inset-0 bg-gradient-to-b from-cave-dark/70 via-cave-dark/65 to-cave-dark/75"></div>
-            </div>
-
-            <!-- Content -->
-            <div class="relative z-10">
-                <h3 class="text-3xl font-bold mb-8 text-center drop-shadow-lg">
-                    <span class="text-cave-emerald">Past</span> Recordings
-                </h3>
-
-                <!-- Recording 1: Caving Software and AI -->
-                <div class="card p-6 mb-6">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <!-- Video Player -->
-                        <div class="lg:col-span-2">
-                            <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                                <iframe
-                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                                    src="https://www.youtube.com/embed/j1pbNItf42A"
-                                    title="Caving Software and AI - gocaving.ai Discussion"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen
-                                    class="rounded-lg">
-                                </iframe>
-                            </div>
-                        </div>
-
-                        <!-- Video Details -->
-                        <div class="flex flex-col justify-center">
-                            <div class="mb-3">
-                                <span class="text-cave-emerald font-mono text-sm">November 18, 2025</span>
-                            </div>
-                            <h4 class="text-2xl font-semibold mb-3 text-white">Caving Software and AI</h4>
-                            <p class="text-gray-300 mb-4">Join Aaron Bird and Philip Schuchardt for an engaging discussion on cave survey software design, vibe coding with AI, and how modern technology is making technical work accessible to everyone in the caving community.</p>
-                            <div class="space-y-2 text-sm text-gray-400">
-                                <p><strong class="text-cave-emerald-light">Topics covered:</strong></p>
-                                <ul class="list-disc list-inside space-y-1 ml-2">
-                                    <li>Software design process for cave surveying tools</li>
-                                    <li>AI-assisted coding and development</li>
-                                    <li>Preferred languages and scripting tools</li>
-                                    <li>Making technical work accessible to cavers</li>
-                                </ul>
-                            </div>
-                            <a href="https://www.youtube.com/watch?v=j1pbNItf42A"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="inline-block mt-4 text-cave-emerald-light hover:text-cave-emerald text-sm font-medium transition">
-                                Watch on YouTube →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Future recordings will be added here as cards -->
-            </div>
-        </section>
-
-        <!-- Feedback Section -->
-        <section class="mb-16">
-            <h3 class="text-3xl font-bold mb-8 text-center">
-                <span class="text-cave-emerald">Comments</span> & Feedback
-            </h3>
-
-            <div class="card max-w-2xl mx-auto p-8">
-                <p class="text-gray-300 mb-6 text-center">Have suggestions for topics? Questions about the series? We'd love to hear from you.</p>
-
-                <!-- Status message -->
-                <div id="feedback-status" class="mb-4 hidden"></div>
-
-                <form id="feedback-form" class="space-y-4">
-                    <!-- Honeypot field for spam prevention -->
-                    <p class="hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label for="feedback-name" class="block text-sm font-medium text-gray-300 mb-2">Name (optional)</label>
-                            <input type="text" id="feedback-name" name="name"
-                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
-                        </div>
-
-                        <div>
-                            <label for="feedback-email" class="block text-sm font-medium text-gray-300 mb-2">Email (optional)</label>
-                            <input type="email" id="feedback-email" name="email"
-                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
-                                   placeholder="your@email.com">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message *</label>
-                        <textarea id="message" name="message" required rows="5"
-                                  class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition resize-none"
-                                  placeholder="Your thoughts, suggestions, or questions..."></textarea>
-                    </div>
-
-                    <button type="submit" id="feedback-btn"
-                            class="w-full bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
-                        Send Feedback
-                    </button>
-                </form>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-700/50 py-8 mt-16">
-        <div class="max-w-5xl mx-auto px-6 text-center text-gray-400 text-sm">
-            <p class="mb-2">&copy; 2025 gocaving.ai - AI in Caving Discussion Series</p>
-            <p class="text-xs text-gray-500">Built with ❤️ for the caving community • Hosted on CloudFlare Pages</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript for interactivity -->
-    <script src="script.js"></script>
-
+  <footer>Aaron Bird &middot; gocaving.ai</footer>
+</main>
 </body>
 </html>

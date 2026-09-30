@@ -10,8 +10,8 @@ Thumbs.db
 *.swo
 *~
 
-# Netlify
-.netlify/
+# Dependencies
+node_modules/
 
 # Environment files
 .env
@@ -20,7 +20,6 @@ Thumbs.db
 
 # CloudFlare
 .wrangler/
-wrangler.toml
 
 # Logs
 *.log

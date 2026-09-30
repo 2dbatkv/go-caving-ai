@@ -8,6 +8,9 @@ no code with it.
 
 ## What's here
 
+```
+index.html      the entire landing page — inline CSS, inline SVG, no dependencies
+```
 
 The landing page is deliberately self-contained. It loads one external resource (the
 Instrument Sans webfont from Google Fonts) and nothing else — no framework, no build
@@ -55,7 +58,7 @@ app, so the two read as one system.
 | Branch | What it is |
 |---|---|
 | `main` | Live. What Cloudflare Pages serves. |
-| `site-v1` | The previous site — a Tailwind-based multi-section page with background images and subscribe/feedback forms. Kept as a record; not deployed. |
+| `site-v1` | The previous site — a Tailwind-based multi-section page with background images and subscribe/feedback forms, plus the `/api/subscribe` and `/api/feedback` Pages Functions it used. Kept as a record; not deployed. |
 
 ## Conventions
 

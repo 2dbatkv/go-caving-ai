@@ -1,196 +1,66 @@
-# gocaving.ai - Landing Page
+# gocaving.ai
 
-Official landing page for the **AI in Caving** online discussion series.
+The public site for **gocaving.ai** — a working home for cave survey and karst projects.
 
-## Overview
+This repo is the public side only. Member project workspaces live in a separate
+application at [app.gocaving.ai](https://app.gocaving.ai); this site links to it but shares
+no code with it.
 
-This site serves as the public entry point for gocaving.ai, a platform dedicated to exploring artificial intelligence, data science, and technology applications in cave exploration.
+## What's here
 
-## Features
 
-- **Email Subscription**: Visitors can subscribe to receive updates about upcoming discussions
-- **Upcoming Discussions**: Display scheduled online sessions with dates, times, and join links
-- **Past Recordings**: Archive of previous discussion recordings with links to YouTube
-- **Feedback Form**: Allow visitors to submit comments, suggestions, and topic requests
+The landing page is deliberately self-contained. It loads one external resource (the
+Instrument Sans webfont from Google Fonts) and nothing else — no framework, no build
+step, no local scripts or images.
 
-## Tech Stack
+## How it deploys
 
-- **Frontend**: Static HTML with Tailwind CSS (via CDN)
-- **Forms**: Netlify Forms (no backend required)
-- **Hosting**: Netlify
-- **Version Control**: GitHub
+Cloudflare Pages builds from the `main` branch of this repo. There is no build command
+and no output directory to configure; the files are served as they are.
 
-## Local Development
+**Pushing to `main` publishes to https://gocaving.ai.** There is no staging step, so
+review before you push.
 
-### Prerequisites
+## Local development
 
-- A modern web browser
-- (Optional) A local web server for testing
+No toolchain required. Open `index.html` in a browser, or serve the folder if you want
+paths to behave exactly as they do in production:
 
-### Running Locally
-
-#### Option 1: Open directly in browser
 ```bash
-# Navigate to the project directory
-cd gocaving-landing
-
-# Open index.html in your browser
-# On Linux/WSL:
-explorer.exe index.html
-# Or use your browser's File > Open option
+python -m http.server 8000
+# then open http://localhost:8000
 ```
 
-#### Option 2: Use Python's built-in server
-```bash
-# Navigate to the project directory
-cd gocaving-landing
+## Design
 
-# Start a local server (Python 3)
-python3 -m http.server 8000
+New pages should match the landing page rather than introduce a second look. The palette
+and type are defined inline at the top of `index.html`:
 
-# Open in browser
-# Visit: http://localhost:8000
-```
+| Token | Value | Use |
+|---|---|---|
+| `--surface` | `#DCE0D9` | Page background |
+| `--surface-deep` | `#CDD3CB` | Notebook grid lines |
+| `--card` | `#E9ECE5` | Raised surfaces, button text |
+| `--border` | `#C9CFC6` | Hairline rules |
+| `--ink` | `#1C231E` | Body text, survey lines |
+| `--mid` | `#5A6455` | Secondary text |
+| `--accent` | `#1F5A72` | Links, buttons, survey leads |
+| `--accent-ink` | `#164457` | Hover state |
 
-#### Option 3: Use Node's http-server
-```bash
-# Install http-server globally (one time)
-npm install -g http-server
+Typeface is **Instrument Sans** (400/500/600). The same palette is used by the members
+app, so the two read as one system.
 
-# Navigate to the project directory
-cd gocaving-landing
+## Branches
 
-# Start server
-http-server -p 8000
+| Branch | What it is |
+|---|---|
+| `main` | Live. What Cloudflare Pages serves. |
+| `site-v1` | The previous site — a Tailwind-based multi-section page with background images and subscribe/feedback forms. Kept as a record; not deployed. |
 
-# Visit: http://localhost:8000
-```
+## Conventions
 
-## Updating Content
-
-### Adding Upcoming Discussions
-
-Edit `index.html` and locate the "Upcoming Discussions Section" (around line 89). Duplicate a discussion card and update:
-- Date and time
-- Timezone
-- Discussion title
-- Description
-- Meeting link
-
-### Adding Past Recordings
-
-Edit `index.html` and locate the "Past Recordings Section" (around line 133). Duplicate a recording card and update:
-- Recording date
-- Title
-- Description
-- YouTube link
-- (Optional) Replace the placeholder with actual YouTube thumbnail
-
-To use actual YouTube thumbnails, replace the SVG placeholder with:
-```html
-<img src="https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg"
-     alt="Video thumbnail"
-     class="w-full h-full object-cover">
-```
-
-## Deployment
-
-### Deploying to Netlify
-
-1. **Create a GitHub repository**
-   ```bash
-   cd gocaving-landing
-   git init
-   git add .
-   git commit -m "Initial commit: gocaving.ai landing page"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/gocaving-landing.git
-   git push -u origin main
-   ```
-
-2. **Connect to Netlify**
-   - Log in to [Netlify](https://netlify.com)
-   - Click "Add new site" > "Import an existing project"
-   - Connect your GitHub account
-   - Select the `gocaving-landing` repository
-   - Build settings:
-     - Build command: (leave empty)
-     - Publish directory: `/` (root)
-   - Click "Deploy site"
-
-3. **Configure Custom Domain**
-   - In Netlify dashboard, go to Site settings > Domain management
-   - Add custom domain: `gocaving.ai`
-   - Follow DNS configuration instructions
-   - SSL certificate will be automatically provisioned
-
-4. **Enable Netlify Forms**
-   - Forms are automatically detected via `data-netlify="true"` attribute
-   - View submissions: Site dashboard > Forms
-   - Configure notifications: Forms > Form notifications
-   - (Optional) Set up email notifications for new submissions
-
-### Form Submissions
-
-After deployment, you can:
-- View all form submissions in the Netlify dashboard
-- Export submissions as CSV
-- Set up email notifications
-- Integrate with Zapier or other services
-
-## File Structure
-
-```
-gocaving-landing/
-├── index.html          # Main landing page
-├── script.js           # JavaScript for interactivity
-├── netlify.toml        # Netlify configuration
-├── README.md           # This file
-├── DESIGN.md           # (Optional) Design documentation
-└── assets/
-    └── images/         # Logo, icons, images (if needed)
-```
-
-## Future Enhancements
-
-### Phase 2 (Backend Integration)
-- Dynamic content loading via API
-- Database for events and recordings
-- Backend on Render (Flask/FastAPI)
-- PostgreSQL database
-
-### Phase 3 (Expanded Features)
-- AI tools for cavers
-- Interactive cave survey visualizations
-- Project showcase pages
-- Community forum
-- User accounts and authentication
-
-## Design Guidelines
-
-### Color Palette
-- Background: Slate dark (`#0f172a`, `#1e293b`)
-- Primary accent: Emerald (`#10b981`, `#34d399`)
-- Text: Light gray (`#e5e7eb`) and muted gray (`#9ca3af`)
-
-### Typography
-- Font: System fonts (Tailwind defaults)
-- Headings: Bold, with emerald accent colors
-- Body: Light gray on dark background
-
-### Components
-- Cards: Semi-transparent background with emerald borders
-- Hover effects: Subtle lift and border glow
-- Border radius: 12px for cards, 8px for inputs
-- Responsive: Mobile-first, works on all screen sizes
-
-## Support
-
-For questions, issues, or suggestions:
-- Submit feedback via the form on the site
-- (Coming soon) GitHub Issues
-- Email: (to be added)
-
-## License
-
-Copyright © 2024 gocaving.ai
+- **Line endings are LF.** Enforced by `.gitattributes`. Without it, editors on Windows
+  rewrite files as CRLF and every line shows as changed.
+- **Pages are self-contained.** Inline the CSS; no build step to run and nothing to
+  forget. Embed small graphics as inline SVG.
+- **No analytics, no trackers, no cookies.**

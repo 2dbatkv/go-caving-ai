@@ -51,13 +51,22 @@
   .now .src{font-size:.78rem; color:var(--mid); margin:0}
 
   /* next call */
-  .next{background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent);
+  .next{max-width:100%; background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent);
     border-radius:4px; padding:1.3rem 1.4rem; margin-top:1.3rem}
   .next .when{font-size:1.15rem; font-weight:600; margin:0 0 .15rem}
   .next .tz{font-size:.88rem; color:var(--mid); margin:0 0 .8rem}
   .next h3{font-size:1.05rem; font-weight:600; margin:0 0 .35rem}
   .next p.topic{margin:0 0 .9rem; color:var(--mid); font-size:.96rem}
   .next p.join{margin:0; font-size:.92rem; color:var(--mid)}
+  .join-grid{margin:0; display:grid; gap:.35rem .9rem; grid-template-columns:auto 1fr;
+    font-size:.93rem; align-items:baseline}
+  .join-grid dt{color:var(--mid)}
+  .join-grid dd{margin:0; font-variant-numeric:tabular-nums; min-width:0; overflow-wrap:anywhere}
+  .joinbtn{display:inline-block; background:var(--accent); color:var(--card);
+    text-decoration:none; font-weight:500; padding:.6rem 1.15rem; border-radius:4px; margin-bottom:.9rem}
+  .joinbtn:hover{background:var(--accent-ink); color:var(--card)}
+  .tapnums{margin:.8rem 0 0; font-size:.86rem; color:var(--mid); line-height:1.7}
+  .tapnums code{background:var(--surface-deep); padding:.05rem .3rem; border-radius:2px; overflow-wrap:anywhere}
 
   /* archive */
   .past{list-style:none; margin:1.3rem 0 0; padding:0; border-top:1px solid var(--border)}
@@ -121,14 +130,24 @@ NSS&nbsp;#27029.</p>
 
 <section>
   <p class="kicker">Next call</p>
-  <h2>NSS Acts and Bylaws</h2>
+  <h2>Acts, Bylaws and the Board Manual</h2>
   <div class="next">
     <p class="when">Thursday 1 October 2026 · 9:00 PM Eastern</p>
     <p class="tz">8:00 PM Central · 7:00 PM Mountain · 6:00 PM Pacific</p>
     <h3>What the call covers</h3>
     <p class="topic">How the Board's rules are written, changed and published — including
     the 2024 restructuring that cut about 963 Acts to 135.</p>
-    <p class="join">Joining details to be posted here.</p>
+    <h3>Joining</h3>
+    <a class="joinbtn" href="https://us06web.zoom.us/j/89313488946?pwd=DFqTHJFeMvFzfrBZU07TTw8tBAQr6l.1">Join the Zoom call</a>
+    <dl class="join-grid">
+      <dt>Meeting ID</dt><dd>893 1348 8946</dd>
+      <dt>Passcode</dt><dd>887790</dd>
+      <dt>Chat link</dt><dd><a href="https://us06web.zoom.us/launch/jc/89313488946">us06web.zoom.us/launch/jc/89313488946</a></dd>
+      <dt>SIP</dt><dd>89313488946@zoomcrc.com</dd>
+    </dl>
+    <p class="tapnums">One-tap mobile:
+      <code>+13017158592,,89313488946#,,,,*887790#</code> US (Washington DC) ·
+      <code>+13052241968,,89313488946#,,,,*887790#</code> US</p>
   </div>
   <p class="upcoming"><strong>Then:</strong> Thursday 8 October 2026, 9:00 PM Eastern —
   <em>NSS Financials.</em> What the public financial record shows: budgets,
@@ -144,7 +163,8 @@ NSS&nbsp;#27029.</p>
       <span class="title">
         <a href="/bogwatch/2026-09-24/">What the minutes say</a>
         <span class="desc">Thirty years of Board of Governors records, 1996–2026: what is
-        posted, how long it takes to appear, and what the Society's own rules require.</span>
+        posted, how long it takes to appear, and what the Society's own rules require.
+        Recording and slides on the page.</span>
       </span>
     </li>
   </ul>

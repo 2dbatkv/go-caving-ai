@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BOG Watch · gocaving.ai</title>
 <meta name="description" content="A recurring call on the National Speleological Society Board of Governors, read from the public record. Not affiliated with the NSS.">
+<meta property="og:title" content="BOG Watch">
+<meta property="og:description" content="A recurring call on the National Speleological Society Board of Governors, read from the public record. Not affiliated with the NSS.">
+<meta property="og:image" content="https://gocaving.ai/bogwatch/bogwatch-hero.jpg">
+<meta property="og:url" content="https://gocaving.ai/bogwatch/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,6 +33,10 @@
   header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
   header.top a.home:hover{text-decoration:underline}
   header.top span.sec{color:var(--mid); font-size:.95rem}
+  .hero{display:block; width:100%; height:auto; margin:1.6rem 0 0;
+    border:1px solid var(--border); border-radius:4px; background:var(--card)}
+  .vh{position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0}
   .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
     color:var(--mid); font-weight:600; margin:2.6rem 0 .9rem}
   h1{font-size:clamp(2.2rem,7vw,3.1rem); font-weight:600; letter-spacing:-.03em;
@@ -90,8 +100,11 @@
   <span class="sec">BOG Watch</span>
 </header>
 
+<img class="hero" src="bogwatch-hero.jpg" width="1407" height="768"
+  alt="A caver at a cave entrance looking out over a bog at dusk, headlamp beam writing the words BOG Watch in red light across the sky.">
+
+<h1 class="vh">BOG Watch</h1>
 <p class="eyebrow">Public records · facts, sources and questions</p>
-<h1>BOG Watch</h1>
 <p class="lede prose">A recurring call on the National Speleological Society Board of
 Governors, read from the public record — what it contains, what it does not, and the
 questions that follow.</p>

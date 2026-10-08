@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Videos · BOG Watch · gocaving.ai</title>
+<meta name="description" content="Interviews and call recordings from BOG Watch, collected in one place. Not affiliated with the NSS.">
+<meta property="og:title" content="BOG Watch · Videos">
+<meta property="og:description" content="Interviews and call recordings from BOG Watch, collected in one place. Not affiliated with the NSS.">
+<meta property="og:image" content="https://gocaving.ai/bogwatch/bogwatch-hero.jpg">
+<meta property="og:url" content="https://gocaving.ai/bogwatch/videos/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:#DCE0D9; --surface-deep:#CDD3CB; --card:#E9ECE5; --border:#C9CFC6;
+    --ink:#1C231E; --mid:#5A6455; --accent:#1F5A72; --accent-ink:#164457;
+    --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--surface); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased}
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(var(--surface-deep) 1px,transparent 1px),
+      linear-gradient(90deg,var(--surface-deep) 1px,transparent 1px); background-size:28px 28px}
+  .wrap{position:relative; max-width:54rem; margin:0 auto; padding-inline:1.5rem; padding-block:0 4rem}
+  .prose{max-width:38rem}
+  header.top{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:baseline;
+    padding-block:1.6rem 1.1rem; border-bottom:1px solid var(--border)}
+  header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
+  header.top a.crumb{color:var(--accent); text-decoration:none; font-weight:500}
+  header.top a.home:hover,header.top a.crumb:hover{text-decoration:underline}
+  header.top span.sec{color:var(--mid); font-size:.95rem}
+  .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:2.6rem 0 .9rem}
+  h1{font-size:clamp(2rem,6vw,2.8rem); font-weight:600; letter-spacing:-.03em;
+    line-height:1.05; margin:0 0 .8rem; text-wrap:balance}
+  p.lede{font-size:1.12rem; margin:0 0 1rem}
+  p{margin:0 0 1rem}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+  a:hover{color:var(--accent-ink)}
+  .disclaimer{border-left:3px solid var(--accent); background:var(--card);
+    padding:.85rem 1.1rem; margin:1.6rem 0 0; max-width:38rem; font-size:.95rem; color:var(--mid)}
+  .disclaimer strong{color:var(--ink); font-weight:600}
+  section{margin-top:3.4rem}
+  h2{font-size:1.5rem; font-weight:600; letter-spacing:-.02em; margin:0 0 .5rem; text-wrap:balance}
+  h3{font-size:1.02rem; font-weight:600; margin:1.6rem 0 .3rem}
+  .kicker{font-size:.72rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:0 0 .5rem}
+  .video{position:relative; aspect-ratio:16/9; width:100%; max-width:46rem;
+    border:1px solid var(--border); border-radius:4px; overflow:hidden;
+    background:var(--card); margin-top:1.3rem}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .downloads{display:grid; gap:.8rem; margin-top:1.2rem; max-width:44rem}
+  .dl{display:block; background:var(--card); border:1px solid var(--border);
+    border-left:3px solid var(--accent); border-radius:4px; padding:.9rem 1.1rem; text-decoration:none}
+  .dl:hover{border-color:var(--accent); border-left-color:var(--accent-ink)}
+  .dl .t{font-weight:600; display:block}
+  .dl .m{display:block; color:var(--mid); font-size:.86rem; margin-top:.1rem}
+  .dl .d{display:block; color:var(--mid); font-size:.92rem; margin-top:.35rem; font-weight:400}
+  .source{font-size:.8rem; color:var(--mid); margin-top:.6rem; max-width:44rem}
+  .facts{list-style:none; margin:1.2rem 0 0; padding:0; border-top:1px solid var(--border); max-width:44rem}
+  .facts li{padding:.85rem 0; border-bottom:1px solid var(--border); display:grid; gap:.15rem .9rem}
+  @media(min-width:620px){.facts li{grid-template-columns:7.5rem 1fr; align-items:baseline}}
+  .facts .k{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid); font-weight:600}
+  .facts .v{margin:0}
+  .clip{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--border)}
+  .clip:first-of-type{border-top:0; padding-top:0; margin-top:1.3rem}
+  .clip h3{font-size:1.2rem; margin:0 0 .35rem}
+  .clip .meta{font-size:.86rem; color:var(--mid); margin:0 0 .6rem}
+  .clip .more{font-size:.92rem; margin:.8rem 0 0}
+  footer{margin-top:3.6rem; padding-top:1.1rem; border-top:1px solid var(--border);
+    color:var(--mid); font-size:.88rem}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="home" href="/">gocaving.ai</a>
+  <a class="crumb" href="/bogwatch/">BOG Watch</a>
+  <span class="sec">Videos</span>
+</header>
+
+<p class="eyebrow">BOG Watch · Videos · Newest first</p>
+<h1>Videos</h1>
+<p class="lede prose">Interviews and call recordings from BOG Watch, collected in one place.</p>
+
+<p class="disclaimer"><strong>Not affiliated with the NSS.</strong> Interviews are the guest's
+own words and views. Where a video sets them beside the public record, every document shown was
+retrieved from a public web address, with no login.</p>
+
+<section>
+  <p class="kicker">Interviews</p>
+  <h2>In their own words</h2>
+
+  <!-- To add an interview: copy this <article> block, newest first. -->
+  <article class="clip" id="jean-devries">
+    <h3>Jean DeVries, in her own voice</h3>
+    <p class="meta">Released 7 October 2026 · About 16 minutes</p>
+    <p class="prose">Jean DeVries chaired the 2004 NSS Convention in Marquette, Michigan, took the
+    minutes at every Board of Governors meeting from 2010 to 2018, and served as a voting Director
+    from 2016 to 2019. In a recorded call she talked about what the recording secretary's job
+    involved, how prepared Board members were, and what she thinks the Board needs now.</p>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/Iar_5OVcs20"
+        title="Former NSS Recording Secretary and Director Jean DeVries, In Her Own Voice"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <ul class="facts">
+      <li><span class="k">Recorded</span><p class="v">25 September 2026, by video call.</p></li>
+      <li><span class="k">In the video</span><p class="v">Jean's own words from the call. The
+        questions were re-recorded by Aaron Bird. The slides quote her and set the public record
+        beside her account.</p></li>
+      <li><span class="k">Reviewed</span><p class="v">Jean watched the video before release and
+        approved it. Her one correction, that the voting buttons were red and not yellow, is noted
+        on screen.</p></li>
+      <li><span class="k">Her views</span><p class="v">Her comments on the Board today are her
+        views as a former director. She was not describing first-hand involvement in this year's
+        events.</p></li>
+    </ul>
+  </article>
+</section>
+
+<section>
+  <p class="kicker">Call recordings</p>
+  <h2>BOG Watch calls</h2>
+  <p class="prose">Each call has its own page with the slides, corrections and sources.</p>
+
+  <!-- To add a call: copy this <article> block, newest first. -->
+  <article class="clip">
+    <h3>What the rulebook says</h3>
+    <p class="meta">Call of 1 October 2026</p>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/OutTCeWY8k4"
+        title="BOG Watch, 1 October 2026 — What the rulebook says"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="more"><a href="/bogwatch/2026-10-01/">Slides, corrections and the Article III question</a></p>
+  </article>
+
+  <article class="clip">
+    <h3>What the minutes say</h3>
+    <p class="meta">Call of 24 September 2026</p>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/Yt1Jnwfk1A4"
+        title="BOG Watch, 24 September 2026 — What the minutes say"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="more"><a href="/bogwatch/2026-09-24/">Slides and sources for this call</a></p>
+  </article>
+</section>
+
+<footer>
+  BOG Watch · gocaving.ai &nbsp;·&nbsp; Public records only &nbsp;·&nbsp;
+  Not affiliated with the National Speleological Society.
+</footer>
+
+</div>
+</body>
+</html>

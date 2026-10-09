@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Historical caving information in the public record · BOG Watch · gocaving.ai</title>
+<meta name="description" content="Historical caving information in the public record: accounts of the NSS&#x27;s online channels, CaveChat and Caving News, built from public records only.">
+<meta property="og:title" content="BOG Watch · Historical caving information in the public record">
+<meta property="og:description" content="Historical caving information in the public record: accounts of the NSS&#x27;s online channels, CaveChat and Caving News, built from public records only.">
+<meta property="og:image" content="https://gocaving.ai/bogwatch/bogwatch-hero.jpg">
+<meta property="og:url" content="https://gocaving.ai/bogwatch/history/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:#DCE0D9; --surface-deep:#CDD3CB; --card:#E9ECE5; --border:#C9CFC6;
+    --ink:#1C231E; --mid:#5A6455; --accent:#1F5A72; --accent-ink:#164457;
+    --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--surface); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased}
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(var(--surface-deep) 1px,transparent 1px),
+      linear-gradient(90deg,var(--surface-deep) 1px,transparent 1px); background-size:28px 28px}
+  .wrap{position:relative; max-width:54rem; margin:0 auto; padding-inline:1.5rem; padding-block:0 4rem}
+  .prose{max-width:38rem}
+  header.top{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:baseline;
+    padding-block:1.6rem 1.1rem; border-bottom:1px solid var(--border)}
+  header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
+  header.top a.crumb{color:var(--accent); text-decoration:none; font-weight:500}
+  header.top a.home:hover,header.top a.crumb:hover{text-decoration:underline}
+  header.top span.sec{color:var(--mid); font-size:.95rem}
+  .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:2.6rem 0 .9rem}
+  h1{font-size:clamp(2rem,6vw,2.8rem); font-weight:600; letter-spacing:-.03em;
+    line-height:1.05; margin:0 0 .8rem; text-wrap:balance}
+  p.lede{font-size:1.12rem; margin:0 0 1rem}
+  p{margin:0 0 1rem}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+  a:hover{color:var(--accent-ink)}
+  .disclaimer{border-left:3px solid var(--accent); background:var(--card);
+    padding:.85rem 1.1rem; margin:1.6rem 0 0; max-width:38rem; font-size:.95rem; color:var(--mid)}
+  .disclaimer strong{color:var(--ink); font-weight:600}
+  section{margin-top:3.4rem}
+  h2{font-size:1.5rem; font-weight:600; letter-spacing:-.02em; margin:0 0 .5rem; text-wrap:balance}
+  h3{font-size:1.02rem; font-weight:600; margin:1.6rem 0 .3rem}
+  .kicker{font-size:.72rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:0 0 .5rem}
+  .video{position:relative; aspect-ratio:16/9; width:100%; max-width:46rem;
+    border:1px solid var(--border); border-radius:4px; overflow:hidden;
+    background:var(--card); margin-top:1.3rem}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .downloads{display:grid; gap:.8rem; margin-top:1.2rem; max-width:44rem}
+  .dl{display:block; background:var(--card); border:1px solid var(--border);
+    border-left:3px solid var(--accent); border-radius:4px; padding:.9rem 1.1rem; text-decoration:none}
+  .dl:hover{border-color:var(--accent); border-left-color:var(--accent-ink)}
+  .dl .t{font-weight:600; display:block}
+  .dl .m{display:block; color:var(--mid); font-size:.86rem; margin-top:.1rem}
+  .dl .d{display:block; color:var(--mid); font-size:.92rem; margin-top:.35rem; font-weight:400}
+  .source{font-size:.8rem; color:var(--mid); margin-top:.6rem; max-width:44rem}
+  .facts{list-style:none; margin:1.2rem 0 0; padding:0; border-top:1px solid var(--border); max-width:44rem}
+  .facts li{padding:.85rem 0; border-bottom:1px solid var(--border); display:grid; gap:.15rem .9rem}
+  @media(min-width:620px){.facts li{grid-template-columns:7.5rem 1fr; align-items:baseline}}
+  .facts .k{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid); font-weight:600}
+  .facts .v{margin:0}
+  .clip{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--border)}
+  .clip:first-of-type{border-top:0; padding-top:0; margin-top:1.3rem}
+  .clip h3{font-size:1.2rem; margin:0 0 .35rem}
+  .clip .meta{font-size:.86rem; color:var(--mid); margin:0 0 .6rem}
+  .clip .more{font-size:.92rem; margin:.8rem 0 0}
+  footer{margin-top:3.6rem; padding-top:1.1rem; border-top:1px solid var(--border);
+    color:var(--mid); font-size:.88rem}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+<style>
+  .doc{max-width:46rem}
+  .doc h2{margin-top:2.6rem}
+  .doc h3{font-size:1.05rem; margin:1.6rem 0 .3rem}
+  .doc table{border-collapse:collapse; width:100%; font-size:.9rem; margin:1rem 0 1.4rem}
+  .doc th,.doc td{text-align:left; vertical-align:top; padding:.45rem .6rem; border-bottom:1px solid var(--border)}
+  .doc th{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid)}
+  .doc code{background:var(--surface-deep); padding:.05rem .3rem; border-radius:2px; font-size:.86em; overflow-wrap:anywhere}
+  .doc blockquote{margin:1rem 0; padding:.2rem 1rem; border-left:3px solid var(--accent); color:var(--mid)}
+  .doc ul,.doc ol{padding-left:1.3rem}
+  .doc li{margin:.25rem 0}
+  .doc hr{border:0; border-top:1px solid var(--border); margin:2rem 0}
+  .doc p.frontmatter{font-size:.92rem; color:var(--mid)}
+  .tbl{overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="home" href="/">gocaving.ai</a>
+  <a class="crumb" href="/bogwatch/">BOG Watch</a>
+  <span class="sec">History</span>
+</header>
+
+<p class="eyebrow">BOG Watch · History · Public records only</p>
+<h1>Historical caving information in the public record</h1>
+<p class="lede prose">Accounts of the Society's online channels, built from what is publicly on record and nothing else. Each has a slide deck, a written account with file-level sources, and a list of the questions only the Society can answer.</p>
+
+<p class="disclaimer"><strong>Not affiliated with the NSS.</strong> A historical account built only
+from public records: NSS Board documents, the Internet Archive's capture index, archived front pages and
+domain registries. No forum post, member profile or reader comment was read, and none is reproduced.</p>
+
+<div class="doc">
+
+<section>
+  <p class="kicker">How these were made</p>
+  <h2>Public record, and only that</h2>
+  <p class="prose">Four kinds of source: NSS Board minutes, agendas and officer reports posted on caves.org;
+  the Internet Archive's public index of captures (dates, addresses and status codes); archived copies of each
+  site's own front page, for section names and the running totals shown to every visitor; and the public domain
+  registries. Every request was read-only, identified by name and contact, rate-limited and logged.</p>
+  <p class="prose">Deliberately not read: any forum topic, member profile, member list, search page or reader
+  comment. Those carry members' names, comments and opinions. Usernames printed on a front page were blanked
+  before anything was written. Volunteers are referred to by role; Board members and officers appear as the
+  Society's own minutes name them.</p>
+</section>
+
+<section id="cavechat">
+  <p class="kicker">CaveChat, 2005–2026</p>
+  <h2>The NSS discussion forum</h2>
+  <p class="prose">Founded 1 September 2005 and formalised by the Board that November, CaveChat grew to 6,000
+  members and 116,000 posts by 2013, faded to a few dozen posts a year, was retired on paper in March 2021 with a
+  promise to archive it for members, and ran for four more years until it went dark on 28 March 2025. Its domain
+  changed registrar on 28 September 2026. The record does not say why it went dark, where the promised archive is,
+  or who holds the name now.</p>
+  <div class="downloads">
+    <a class="dl" href="/bogwatch/history/CaveChat_2005-2026.pdf">
+      <span class="t">CaveChat, 2005–2026 — slides (PDF)</span>
+      <span class="m">21 slides · 250 KB · compiled 9 October 2026</span>
+      <span class="d">Origins, growth and decline, retirement, the afterlife, the domain, and five questions for the Society.</span>
+    </a>
+    <a class="dl" href="/bogwatch/history/cavechat/">
+      <span class="t">CaveChat, 2005–2026 — the written account</span>
+      <span class="m">Findings with file-level sources</span>
+      <span class="d">Every figure tied to the document it came from; the Board's own words quoted where they bear on the forum.</span>
+    </a>
+  </div>
+</section>
+
+<section id="cavingnews">
+  <p class="kicker">Caving News, 2011–2026</p>
+  <h2>The NSS's media partner</h2>
+  <p class="prose">A one-person daily cave-news site that published 1,831 articles between March 2011 and April
+  2016. The Board made it an official partner by Memorandum of Understanding in 2012 and put its feed on the
+  caves.org home page; the MOU was rescinded in 2023, seven years after the last article. The site returned server
+  errors from November 2021 to April 2025 and was quietly restored in August 2025, where it remains, with its 2016
+  content and the NSS logo still on its masthead.</p>
+  <div class="downloads">
+    <a class="dl" href="/bogwatch/history/CavingNews_2011-2026.pdf">
+      <span class="t">Caving News, 2011–2026 — slides (PDF)</span>
+      <span class="m">28 slides · 2.2 MB · compiled 9 October 2026</span>
+      <span class="d">The daily years, the MOU, collapse and revival, the restoration, and a year-by-year section with eleven of the site's own articles.</span>
+    </a>
+    <a class="dl" href="/bogwatch/history/cavingnews/">
+      <span class="t">Caving News, 2011–2026 — the written account</span>
+      <span class="m">Findings with file-level sources</span>
+      <span class="d">The MOU timeline from the Board's side, the publication record from the archive's index, and what neither says.</span>
+    </a>
+    <a class="dl" href="/bogwatch/history/cavingnews-year-by-year/">
+      <span class="t">Caving News, year by year</span>
+      <span class="m">Eleven articles, 2011–2016</span>
+      <span class="d">Two articles for each year the site published and the single article of 2016, with what each reported and why it stands for its year.</span>
+    </a>
+  </div>
+  <p class="source">Credits. The Caving News slides reproduce short excerpts of eleven articles, as archived by the
+  Internet Archive, from cavingnews.com (© 2011–2016 Caving News, all rights reserved), with the NSS seal as it
+  appeared on that site's masthead, and one frame from the Bjurälven expedition's published video. They are used
+  as attributed excerpts in a historical account. Any of this material will be removed on request from its owner:
+  contact Aaron Bird, NSS&nbsp;#27029.</p>
+</section>
+
+<section>
+  <p class="kicker">Why this is here</p>
+  <h2>Context for the record</h2>
+  <p class="prose">Both channels were the Society's own: one it owned and retired, one it partnered with and let
+  lapse. Each account ends with questions the public record cannot answer and the Society's records could. They are
+  offered as history, not as a charge: what was built, what it did, and what became of it.</p>
+</section>
+
+</div>
+
+<footer>
+  BOG Watch · gocaving.ai &nbsp;·&nbsp; Public records only &nbsp;·&nbsp;
+  Not affiliated with the National Speleological Society.
+</footer>
+
+</div>
+</body>
+</html>

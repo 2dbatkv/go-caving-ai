@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CaveChat, 2005–2026 · BOG Watch · gocaving.ai</title>
+<meta name="description" content="CaveChat (cavechat.org / forums.caves.org), 2005–2026: a historical account from public records.">
+<meta property="og:title" content="BOG Watch · CaveChat, 2005–2026">
+<meta property="og:description" content="CaveChat (cavechat.org / forums.caves.org), 2005–2026: a historical account from public records.">
+<meta property="og:image" content="https://gocaving.ai/bogwatch/bogwatch-hero.jpg">
+<meta property="og:url" content="https://gocaving.ai/bogwatch/history/cavechat/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:#DCE0D9; --surface-deep:#CDD3CB; --card:#E9ECE5; --border:#C9CFC6;
+    --ink:#1C231E; --mid:#5A6455; --accent:#1F5A72; --accent-ink:#164457;
+    --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--surface); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased}
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(var(--surface-deep) 1px,transparent 1px),
+      linear-gradient(90deg,var(--surface-deep) 1px,transparent 1px); background-size:28px 28px}
+  .wrap{position:relative; max-width:54rem; margin:0 auto; padding-inline:1.5rem; padding-block:0 4rem}
+  .prose{max-width:38rem}
+  header.top{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:baseline;
+    padding-block:1.6rem 1.1rem; border-bottom:1px solid var(--border)}
+  header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
+  header.top a.crumb{color:var(--accent); text-decoration:none; font-weight:500}
+  header.top a.home:hover,header.top a.crumb:hover{text-decoration:underline}
+  header.top span.sec{color:var(--mid); font-size:.95rem}
+  .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:2.6rem 0 .9rem}
+  h1{font-size:clamp(2rem,6vw,2.8rem); font-weight:600; letter-spacing:-.03em;
+    line-height:1.05; margin:0 0 .8rem; text-wrap:balance}
+  p.lede{font-size:1.12rem; margin:0 0 1rem}
+  p{margin:0 0 1rem}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+  a:hover{color:var(--accent-ink)}
+  .disclaimer{border-left:3px solid var(--accent); background:var(--card);
+    padding:.85rem 1.1rem; margin:1.6rem 0 0; max-width:38rem; font-size:.95rem; color:var(--mid)}
+  .disclaimer strong{color:var(--ink); font-weight:600}
+  section{margin-top:3.4rem}
+  h2{font-size:1.5rem; font-weight:600; letter-spacing:-.02em; margin:0 0 .5rem; text-wrap:balance}
+  h3{font-size:1.02rem; font-weight:600; margin:1.6rem 0 .3rem}
+  .kicker{font-size:.72rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:0 0 .5rem}
+  .video{position:relative; aspect-ratio:16/9; width:100%; max-width:46rem;
+    border:1px solid var(--border); border-radius:4px; overflow:hidden;
+    background:var(--card); margin-top:1.3rem}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .downloads{display:grid; gap:.8rem; margin-top:1.2rem; max-width:44rem}
+  .dl{display:block; background:var(--card); border:1px solid var(--border);
+    border-left:3px solid var(--accent); border-radius:4px; padding:.9rem 1.1rem; text-decoration:none}
+  .dl:hover{border-color:var(--accent); border-left-color:var(--accent-ink)}
+  .dl .t{font-weight:600; display:block}
+  .dl .m{display:block; color:var(--mid); font-size:.86rem; margin-top:.1rem}
+  .dl .d{display:block; color:var(--mid); font-size:.92rem; margin-top:.35rem; font-weight:400}
+  .source{font-size:.8rem; color:var(--mid); margin-top:.6rem; max-width:44rem}
+  .facts{list-style:none; margin:1.2rem 0 0; padding:0; border-top:1px solid var(--border); max-width:44rem}
+  .facts li{padding:.85rem 0; border-bottom:1px solid var(--border); display:grid; gap:.15rem .9rem}
+  @media(min-width:620px){.facts li{grid-template-columns:7.5rem 1fr; align-items:baseline}}
+  .facts .k{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid); font-weight:600}
+  .facts .v{margin:0}
+  .clip{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--border)}
+  .clip:first-of-type{border-top:0; padding-top:0; margin-top:1.3rem}
+  .clip h3{font-size:1.2rem; margin:0 0 .35rem}
+  .clip .meta{font-size:.86rem; color:var(--mid); margin:0 0 .6rem}
+  .clip .more{font-size:.92rem; margin:.8rem 0 0}
+  footer{margin-top:3.6rem; padding-top:1.1rem; border-top:1px solid var(--border);
+    color:var(--mid); font-size:.88rem}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+<style>
+  .doc{max-width:46rem}
+  .doc h2{margin-top:2.6rem}
+  .doc h3{font-size:1.05rem; margin:1.6rem 0 .3rem}
+  .doc table{border-collapse:collapse; width:100%; font-size:.9rem; margin:1rem 0 1.4rem}
+  .doc th,.doc td{text-align:left; vertical-align:top; padding:.45rem .6rem; border-bottom:1px solid var(--border)}
+  .doc th{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid)}
+  .doc code{background:var(--surface-deep); padding:.05rem .3rem; border-radius:2px; font-size:.86em; overflow-wrap:anywhere}
+  .doc blockquote{margin:1rem 0; padding:.2rem 1rem; border-left:3px solid var(--accent); color:var(--mid)}
+  .doc ul,.doc ol{padding-left:1.3rem}
+  .doc li{margin:.25rem 0}
+  .doc hr{border:0; border-top:1px solid var(--border); margin:2rem 0}
+  .doc p.frontmatter{font-size:.92rem; color:var(--mid)}
+  .tbl{overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="home" href="/">gocaving.ai</a>
+  <a class="crumb" href="/bogwatch/">BOG Watch</a>
+  <a class="crumb" href="/bogwatch/history/">History</a>
+  <span class="sec">CaveChat</span>
+</header>
+
+<p class="eyebrow">BOG Watch · History · Findings</p>
+<h1>CaveChat, 2005–2026</h1>
+<p class="lede prose">The NSS discussion forum: founded 2005, retired on paper 2021, online until March 2025, its domain moved in September 2026. What the public record holds, and what it does not say.</p>
+
+<p class="disclaimer"><strong>Not affiliated with the NSS.</strong> A historical account built only
+from public records: NSS Board documents, the Internet Archive's capture index, archived front pages and
+domain registries. No forum post, member profile or reader comment was read, and none is reproduced.</p>
+
+<div class="doc">
+<p class="frontmatter"><strong>Compiled:</strong> 2026-10-09.
+<strong>Decisions followed:</strong> <code>docs/2026-10-09_cavechat-wayback_questions.md</code> (Q1 answered; Q2 answered "no": no archived
+topic, profile or member pages are read, and no usernames appear in this account or its data files).
+<strong>Ground rules:</strong> Public only · Descriptive · Traceable · No member content.</p>
+<p>Three sources, none of which contain members' posts: (1) the NSS Board of Governors minutes, agendas and officer
+reports already in this archive (<code>index/minutes.sqlite</code>); (2) the Internet Archive's public CDX index of captures
+(<code>data/cavechat_cdx.jsonl</code>, 782,179 rows: dates, URLs, status codes and sizes only); (3) twenty archived copies of the
+forum's own front page, roughly one per year (<code>raw/cavechat/</code>, <code>data/cavechat_manifest.csv</code>), which show section names
+and the running totals phpBB prints for all visitors. The domain-registration record is from the .org registry's RDAP
+service (<code>data/cavechat_rdap.json</code>). Derived tables: <code>data/cavechat_timeseries.csv</code>, <code>data/cavechat_sections.csv</code>.</p>
+<h2>Bottom line</h2>
+<ol>
+<li><strong>CaveChat was the NSS's official discussion forum from 1 September 2005 until it went dark on or about
+   28 March 2025.</strong> It was never hosted at cavechat.org: that name was registered on 3 May 2005 and only ever forwarded
+   to the real forum, first at <code>caves.org/phpBB2/</code> and from 2007 at <code>forums.caves.org</code>, on NSS infrastructure.</li>
+<li><strong>It grew fast and faded slowly.</strong> About 15,000–17,000 posts a year from 2007 to 2011; under 7,000 by 2013; under
+   1,000 by 2017; a few dozen a year from 2021. Registrations never stopped (8,732 accounts by January 2025), but the
+   last recognisably human activity is December 2024.</li>
+<li><strong>The Board retired it on paper in March 2021 and it ran for four more years.</strong> Act 66-764 was rescinded on the
+   consent agenda; the agenda called the forum "unmaintained and unmanaged for some time" and said it would be
+   "archived by the IT Division and retired", with the archive "made available to NSS members". No later public
+   document reports that archive. The Manual (2022, 2023) and the OVP directory (to March 2024) continued to list the
+   forum and its vacant administrator.</li>
+<li><strong>The only complete archive in public view is the Internet Archive's.</strong> On 3–4 January 2021, two months before
+   the motion, 334,000 captures were made in two days (304,000 topic pages, 24,000 posting pages, 6,500 member-list
+   pages, 1,000 attachments). Who initiated it is not recorded.</li>
+<li><strong>The domain changed hands on 28 September 2026.</strong> It was transferred to Amazon Registrar, its nameservers set to
+   AWS Route 53, and its expiry extended to May 2028. The registrant is withheld. Until June 2026 it still forwarded
+   to the dead forums.caves.org host.</li>
+</ol>
+<h2>1. Before CaveChat (2002–2005)</h2>
+<ul>
+<li>An "NSS Discussion Board" existed at <code>caves.org/soapbox/</code> by 2002: the site navigation lists "Discussion Board"
+  (Convention Manual page, 2002-12-20; policy pages 2003), and Board motions and agendas were posted to it as they
+  developed (finance FAQ, 2004-06-20 and 2005-04-03; 0411BOG.pdf p.8, where S. Faulkner "encouraged participation").</li>
+<li>The January 2005 NSS News president's column describes it: announcements, questions for Board members, expeditions,
+  techniques, conservation, photography, education, "gear swap and humor sections" (jan05.pdf).</li>
+<li>2005 member survey, one respondent: "The NSS should be careful not to listen to too much of the fluff on the NSS
+  discussion board, as this is not a representative view of the membership" (2005 survey.pdf p.77).</li>
+</ul>
+<h2>2. Founding and formalization (2005)</h2>
+<ul>
+<li><strong>3 May 2005:</strong> cavechat.org registered (RDAP <code>registration</code> event).</li>
+<li><strong>1 September 2005:</strong> the phpBB forum's own counter starts ("posts since Sept. 1, 2005", front page of 2007-09-21).</li>
+<li><strong>July 2005 (0507BOG.pdf p.3):</strong> C. Jones moved "The NSS shall maintain a caver's discussion board on the NSS Web
+  site. NSS membership shall not be required to read the board posts or to register." Referred to the OVP.</li>
+<li><strong>November 2005 (0511BOG.pdf p.3, Rea):</strong> adopted. The Discussion Board becomes a subcommittee of the IT Committee;
+  its Administrator is appointed by and reports to the OVP; the IT chair is "responsible only for technical advice and
+  software maintenance"; the Administrator and OVP set the Terms of Service; the Administrator appoints moderators and
+  creates or removes forums. This became Act 66-764 (NSS Discussion Forum).</li>
+<li><strong>First Wayback capture:</strong> 9 February 2006, <code>www.cavechat.org</code>, a frameset page titled "The discussion board of the
+  National Speleological Society" whose frame loads <code>www.caves.org/phpBB2/</code>.</li>
+</ul>
+<h2>3. Growth (2006–2013)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Members</th>
+<th>Posts</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2007-09-21</td>
+<td>1,740</td>
+<td>36,312</td>
+<td>front page (phpBB 2, "The NSS Caving Forum")</td>
+</tr>
+<tr>
+<td>2008-08</td>
+<td>~2,300</td>
+<td>~5,500*</td>
+<td>OVP report</td>
+</tr>
+<tr>
+<td>2008-09-20</td>
+<td>2,476</td>
+<td>52,763</td>
+<td>front page</td>
+</tr>
+<tr>
+<td>2009-03-12</td>
+<td>2,825</td>
+<td>60,099</td>
+<td>front page</td>
+</tr>
+<tr>
+<td>2010-07-01</td>
+<td>3,855</td>
+<td>79,295</td>
+<td>front page</td>
+</tr>
+<tr>
+<td>2011-07-25</td>
+<td>4,739</td>
+<td>97,626</td>
+<td>front page</td>
+</tr>
+<tr>
+<td>2012-09-20</td>
+<td>5,671</td>
+<td>111,380</td>
+<td>front page</td>
+</tr>
+<tr>
+<td>2013-06-27</td>
+<td>6,175</td>
+<td>116,479</td>
+<td>front page</td>
+</tr>
+<tr>
+<td>2013-08</td>
+<td>6,177</td>
+<td>116,484</td>
+<td>OVP report</td>
+</tr>
+</tbody>
+</table></div>
+<p>* The August 2008 OVP report's "5,500 posts" is inconsistent with the front page two months later (52,763) and with
+the 2007 figure; it is probably a transcription slip for ~50,500.</p>
+<ul>
+<li><strong>Hosting:</strong> forums.caves.org answers from July 2007; cavechat.org forwards to it (302) from then on. Captures of
+  the forum's own <code>robots.txt</code> show no file at all (404) for most of 2007–2021, a brief <code>Disallow: /</code> in February 2007,
+  and otherwise the standard phpBB exclusions (posting, search, login, profile, memberlist, private messages).</li>
+<li><strong>Administration:</strong> a Discussion Board contact is listed in the 2007 Manual; a new administrator takes over the
+  back end in 2008 (OVP.pdf, Aug 2008 p.7) and is listed as administrator, NSS Forum Sub-Committee, from 2010.</li>
+<li><strong>What it was used for, per the Board's reports:</strong> event and convention notices and NSS announcements; "information
+  on White Nose Syndrome and new products for caving" (Aug 2008); the WNS Liaison distributing research updates
+  (AVP 2009); the ACA soliciting incident reports; committee chairs posting reports (CFC appeal, 2009); sub-forums
+  requested by grottos (2009: "several"); a private, secure forum space for committee discussions replacing Yahoo
+  groups (ICL report); the Education Division and S&amp;TC planning to use it for outreach (2014).</li>
+<li><strong>Operations:</strong> a CaveChat-specific Terms of Service added (Mar 2009); 279 new members Nov 2009–Mar 2010 and 575 in
+  2009; phpBB upgraded (Apr 2011) and reinstalled fresh after "several problems" (Jul 2011); a 15-post minimum before
+  selling in the Marketplace (2011); ~90 new users a month (2011), 30–50 a month (2012); a server crash damaged
+  database files, restored from the administrator's backups (Oct 2012); a moderators' SOP covering personal-data
+  requests (OVP, ~2010); weekly "This Week on CaveChat" posts on Caving News from 2012.</li>
+<li><strong>Companion sites</strong> run by the same sub-committee: OnlineCavers.com (Ning social network, ~1,000 members 2008,
+  2,532 in 2013, costing $599/yr) and the NSS Flickr group.</li>
+<li><strong>Sections (September 2008):</strong> General Discussion (10,610 posts), On Rope! (6,260), Equipment (6,028), Grotto
+  Forums (4,006), Open Talk (3,677), NSS Topics (2,283); 20 sections in all.</li>
+</ul>
+<h2>4. Decline (2014–2020)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Interval</th>
+<th>Posts added</th>
+<th>Rate per year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2007-09 → 2011-07</td>
+<td>61,314</td>
+<td>~16,000</td>
+</tr>
+<tr>
+<td>2011-07 → 2012-09</td>
+<td>13,754</td>
+<td>11,900</td>
+</tr>
+<tr>
+<td>2012-09 → 2013-06</td>
+<td>5,099</td>
+<td>6,600</td>
+</tr>
+<tr>
+<td>2013-06 → 2015-05</td>
+<td>7,677</td>
+<td>4,200</td>
+</tr>
+<tr>
+<td>2015-05 → 2016-06</td>
+<td>1,829</td>
+<td>1,600</td>
+</tr>
+<tr>
+<td>2016-06 → 2017-07</td>
+<td>943</td>
+<td>900</td>
+</tr>
+<tr>
+<td>2017-07 → 2018-08</td>
+<td>696</td>
+<td>600</td>
+</tr>
+<tr>
+<td>2018-08 → 2019-08</td>
+<td>449</td>
+<td>470</td>
+</tr>
+<tr>
+<td>2019-08 → 2020-08</td>
+<td>327</td>
+<td>330</td>
+</tr>
+<tr>
+<td>2020-08 → 2021-11</td>
+<td>133</td>
+<td>100</td>
+</tr>
+<tr>
+<td>2021-11 → 2025-01</td>
+<td>106</td>
+<td>33</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>The Board's reports stop carrying forum statistics after August 2013. From 2014 the forum appears only as one
+  channel among several ("FB, Twitter, Cave Chat, and TAG-Net", AVP 2014; social-media managers posting "the applicable
+  forum on CaveChat", PRES 2014).</li>
+<li>2015: a thread about grotto newsletters appearing on KIP, "focused on the possibility that cave locations could have
+  been disclosed", leads KIP to pull all grotto newsletters (OVP-1503.pdf p.6).</li>
+<li>2015–2017 the IT Division lists "CaveChat online forum", with its administrator, among its activities. June 2017: the OVP is
+  "looking for a webmaster and someone to take on CaveChat"; the directory lists the post vacant. 2018–2019: a new
+  administrator listed; vacant again from 2020 onward.</li>
+<li>August 2017: an outage when a caves.org firewall change exposed that the CaveChat web server was reaching its
+  database by public address (OVP-1710.pdf p.8). October 2017: the Social Media Committee is deciding "which NSS team
+  will moderate content CaveChat" (PRES-1710.pdf).</li>
+<li>Membership kept rising (6,967 in 2015 to 8,013 in 2020, ~200 a year) while posting fell to a few hundred a year.
+  On an unmoderated phpBB, late-period registrations are mostly automated accounts; nothing here identifies any.</li>
+</ul>
+<h2>5. Retirement on paper (2021)</h2>
+<ul>
+<li><strong>3–4 January 2021:</strong> 334,000 captures in two days, the whole public forum. 2021 accounts for 381,542 of the
+  index's 782,179 rows.</li>
+<li><strong>March 2021 agenda (Agenda-2103.pdf p.4):</strong> "Cavechat.org has been unmaintained and unmanaged for some time.
+  Utilization of the platform is low, with some forums not receiving more than one or two posts per year. While
+  Cavechat still functions we will archive and preserve the contents of the site for future members while looking to
+  more appropriate community-based discussion solutions for the 2020s. The NSS Discussion forum hosted at cavechat.org
+  shall be archived by the IT Division and retired. The archive shall be made available to NSS members."</li>
+<li><strong>March 2021 minutes (2103BOG.pdf p.3, item 10):</strong> "Rescind Act 66-764, NSS Discussion Forum. Urbanski moved …
+  Passed in Consent Agenda. PASSED." Item 9 at the same meeting required all committee websites to reside on
+  IT-Division-managed servers within caves.org.</li>
+<li><strong>President's report, same meeting (PRES-2103.pdf p.18):</strong> the NSS Community Facebook group "has essentially
+  fulfilled the role that CaveChat previously did in allowing personal and individual expression of ideas or opinions
+  by members."</li>
+<li>The November 2021 front page shows an announcements thread titled "The forum is back up again!", so there was at
+  least one outage around this time.</li>
+<li><strong>Afterwards:</strong> the BOG Manual editions of June 2022 and October 2023 still print the NSS Forum Sub-Committee policy
+  (administrator reports to the OVP; "currently phpBB"; backups; promotion of the forum). The OVP directory lists
+  "Vacant, Cave Chat admin@cavechat.org" through March 2024. The Code of Conduct names "Cavechat.org" among NSS
+  internal communities. The 2026 Youth Group Coordinator guidelines still tell grottos to link to "the Youth Groups
+  section on the NSS discussion board".</li>
+</ul>
+<h2>6. Afterlife and end (2021–2025)</h2>
+<ul>
+<li>The forum stayed online and public. Front-page totals: 8,252 members / 128,533 posts (Nov 2021); 8,409 / 128,563
+  (Jul 2022); 8,682 / 128,578 (Feb 2023); 8,722 / 128,615 (Aug 2024); 8,732 / 128,639 (Jan 2025).</li>
+<li>The Archive crawled it steadily (106,000 captures in 2022; 136,000 in 2024, about 14,000 a month).</li>
+<li><strong>Sections at the last capture (25 January 2025)</strong>, posts and date of last post:
+  General Discussion 21,985 (2024-11-06) · On Rope! 14,787 (2024-06-21) · Equipment 13,875 (2024-05-19) · Everything
+  Bats 10,952 (2024-06-21) · Open Talk 5,396 (2019-01-11) · Survey and Cartography 4,759 (2024-06-24) · Photography
+  4,178 (2024-11-28) · Caving in the News 3,991 (2023-07-21) · Caver Events 3,400 (2021-07-30) · Caver Introductions
+  3,282 (2024-07-30) · Speleo-Marketplace 3,200 (2024-03-01) · Cave Rescue Techniques 2,739 (2020-05-02) · Trips &amp;
+  Expeditions 2,679 (2022-06-22) · Conservation 2,671 (2021-03-25) · Publications 2,316 (2024-11-05) · Speleology
+  2,176 (2024-10-29) · Cave Diving 1,238 (2024-03-01) · Joke Forum 940 (2018-01-27) · BORC 734 (2019-12-13) · Youth
+  Groups 699 (2019-05-09) · Please Read 332 (2022-08-20) · NSS Announcements 232 (2015-08-20) · In Memory of 157
+  (2020-07-30) · Communications &amp; Electronics Section 109 (2024-12-02) · NSS Archives 54 (2011-01-10) · Safety and
+  Techniques 37 (2017-05-22) · NSS Grotto Forums 19 (2015-10-11). The last thread in the "Please Read" announcements
+  section (August 2022) concerns who holds the Google Workspace for the domain's email.</li>
+<li><strong>Last capture of a working forum: 28 March 2025 16:53 UTC.</strong> After that date the index holds no capture of
+  forums.caves.org at all, and only one or two a month of cavechat.org: a 352-byte forwarding frame to
+  <code>http://forums.caves.org</code>, last seen 10 June 2026. No public NSS document found so far records the shutdown or its
+  cause.</li>
+</ul>
+<h2>7. The domain (2005–2026)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Date</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registered</td>
+<td>2005-05-03</td>
+<td>RDAP</td>
+</tr>
+<tr>
+<td>Forwarding frame to caves.org/phpBB2</td>
+<td>2006-02</td>
+<td>Wayback</td>
+</tr>
+<tr>
+<td>Forwarding frame to forums.caves.org</td>
+<td>by 2011-06 (probably from 2007)</td>
+<td>Wayback</td>
+</tr>
+<tr>
+<td>Frame still pointing at dead host</td>
+<td>2026-06-10</td>
+<td>Wayback</td>
+</tr>
+<tr>
+<td>Transferred to Amazon Registrar, Inc.</td>
+<td>2026-09-28</td>
+<td>RDAP</td>
+</tr>
+<tr>
+<td>Last changed</td>
+<td>2026-10-03</td>
+<td>RDAP</td>
+</tr>
+<tr>
+<td>Nameservers</td>
+<td>awsdns (Route 53)</td>
+<td>RDAP</td>
+</tr>
+<tr>
+<td>Expires</td>
+<td>2028-05-03</td>
+<td>RDAP</td>
+</tr>
+</tbody>
+</table></div>
+<p>Registrant, administrative and technical contacts are withheld by the registrar; the only contact published is
+Amazon's abuse desk. Whether the transfer was made by the NSS or by someone else is not determinable from public
+records.</p>
+<h2>8. Capture density (Internet Archive, all URLs)</h2>
+<p>2006: 22 · 2007: 731 · 2008: 334 · 2009: 215 · 2010: 286 · 2011: 5,093 · 2012: 16,806 · 2013: 9,139 · 2014: 5,006 ·
+2015: 2,105 · 2016: 2,817 · 2017: 1,610 · 2018: 1,021 · 2019: 36,032 · 2020: 18,635 · 2021: 381,542 · 2022: 106,455 ·
+2023: 28,754 · 2024: 136,085 · 2025: 29,483 · 2026: 8.</p>
+<p>The three 401 responses in the index (2016) are the Archive being refused at <code>/adm/</code>, the administrator panel: the
+only part of the forum that was ever closed to it.</p>
+<h2>9. What the public record does not say</h2>
+<ol>
+<li>Why the forum went offline in late March 2025, and whether anyone decided it.</li>
+<li>Whether the IT Division produced the members' archive promised in March 2021, and where it is.</li>
+<li>Who holds cavechat.org after 28 September 2026, and whether the NSS still controls the name.</li>
+<li>Who made the 3–4 January 2021 crawl.</li>
+<li>Whether the forum's database survives on NSS equipment.</li>
+</ol>
+<h2>Method and limits</h2>
+<ul>
+<li>Index and front pages were retrieved by <code>python -m crawler cc-discover / cc-robots / cc-fetch</code> under the identity and
+  limits in <code>CRAWL_POLICY.md</code> §6 (read-only, 1 request / 2 s, robots.txt honored, every request logged). 782,179 index
+  rows, 30 robots.txt versions and 24 front-page captures were requested; nothing from the live site.</li>
+<li>No topic, profile, member-list or search page was requested. The "newest member" field phpBB prints on its front page
+  was blanked in <code>data/cavechat_manifest.csv</code> before this account was written.</li>
+<li>Front-page totals are phpBB's own counters, which count all posts including those later deleted or in sections not
+  shown to visitors; small differences from the Board's figures are expected.</li>
+<li>Board-report passages are quoted from the extracted text in <code>index/minutes.sqlite</code>; file names are given so each can
+  be checked against the PDF.</li>
+</ul>
+</div>
+
+<footer>
+  BOG Watch · gocaving.ai &nbsp;·&nbsp; Public records only &nbsp;·&nbsp;
+  Not affiliated with the National Speleological Society.
+</footer>
+
+</div>
+</body>
+</html>

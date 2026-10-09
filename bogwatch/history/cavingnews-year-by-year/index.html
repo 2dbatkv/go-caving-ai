@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caving News, year by year · BOG Watch · gocaving.ai</title>
+<meta name="description" content="Caving News, year by year: eleven articles, 2011–2016, from archived copies of the site.">
+<meta property="og:title" content="BOG Watch · Caving News, year by year">
+<meta property="og:description" content="Caving News, year by year: eleven articles, 2011–2016, from archived copies of the site.">
+<meta property="og:image" content="https://gocaving.ai/bogwatch/bogwatch-hero.jpg">
+<meta property="og:url" content="https://gocaving.ai/bogwatch/history/cavingnews-year-by-year/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:#DCE0D9; --surface-deep:#CDD3CB; --card:#E9ECE5; --border:#C9CFC6;
+    --ink:#1C231E; --mid:#5A6455; --accent:#1F5A72; --accent-ink:#164457;
+    --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--surface); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased}
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(var(--surface-deep) 1px,transparent 1px),
+      linear-gradient(90deg,var(--surface-deep) 1px,transparent 1px); background-size:28px 28px}
+  .wrap{position:relative; max-width:54rem; margin:0 auto; padding-inline:1.5rem; padding-block:0 4rem}
+  .prose{max-width:38rem}
+  header.top{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:baseline;
+    padding-block:1.6rem 1.1rem; border-bottom:1px solid var(--border)}
+  header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
+  header.top a.crumb{color:var(--accent); text-decoration:none; font-weight:500}
+  header.top a.home:hover,header.top a.crumb:hover{text-decoration:underline}
+  header.top span.sec{color:var(--mid); font-size:.95rem}
+  .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:2.6rem 0 .9rem}
+  h1{font-size:clamp(2rem,6vw,2.8rem); font-weight:600; letter-spacing:-.03em;
+    line-height:1.05; margin:0 0 .8rem; text-wrap:balance}
+  p.lede{font-size:1.12rem; margin:0 0 1rem}
+  p{margin:0 0 1rem}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+  a:hover{color:var(--accent-ink)}
+  .disclaimer{border-left:3px solid var(--accent); background:var(--card);
+    padding:.85rem 1.1rem; margin:1.6rem 0 0; max-width:38rem; font-size:.95rem; color:var(--mid)}
+  .disclaimer strong{color:var(--ink); font-weight:600}
+  section{margin-top:3.4rem}
+  h2{font-size:1.5rem; font-weight:600; letter-spacing:-.02em; margin:0 0 .5rem; text-wrap:balance}
+  h3{font-size:1.02rem; font-weight:600; margin:1.6rem 0 .3rem}
+  .kicker{font-size:.72rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:0 0 .5rem}
+  .video{position:relative; aspect-ratio:16/9; width:100%; max-width:46rem;
+    border:1px solid var(--border); border-radius:4px; overflow:hidden;
+    background:var(--card); margin-top:1.3rem}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .downloads{display:grid; gap:.8rem; margin-top:1.2rem; max-width:44rem}
+  .dl{display:block; background:var(--card); border:1px solid var(--border);
+    border-left:3px solid var(--accent); border-radius:4px; padding:.9rem 1.1rem; text-decoration:none}
+  .dl:hover{border-color:var(--accent); border-left-color:var(--accent-ink)}
+  .dl .t{font-weight:600; display:block}
+  .dl .m{display:block; color:var(--mid); font-size:.86rem; margin-top:.1rem}
+  .dl .d{display:block; color:var(--mid); font-size:.92rem; margin-top:.35rem; font-weight:400}
+  .source{font-size:.8rem; color:var(--mid); margin-top:.6rem; max-width:44rem}
+  .facts{list-style:none; margin:1.2rem 0 0; padding:0; border-top:1px solid var(--border); max-width:44rem}
+  .facts li{padding:.85rem 0; border-bottom:1px solid var(--border); display:grid; gap:.15rem .9rem}
+  @media(min-width:620px){.facts li{grid-template-columns:7.5rem 1fr; align-items:baseline}}
+  .facts .k{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid); font-weight:600}
+  .facts .v{margin:0}
+  .clip{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--border)}
+  .clip:first-of-type{border-top:0; padding-top:0; margin-top:1.3rem}
+  .clip h3{font-size:1.2rem; margin:0 0 .35rem}
+  .clip .meta{font-size:.86rem; color:var(--mid); margin:0 0 .6rem}
+  .clip .more{font-size:.92rem; margin:.8rem 0 0}
+  footer{margin-top:3.6rem; padding-top:1.1rem; border-top:1px solid var(--border);
+    color:var(--mid); font-size:.88rem}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+<style>
+  .doc{max-width:46rem}
+  .doc h2{margin-top:2.6rem}
+  .doc h3{font-size:1.05rem; margin:1.6rem 0 .3rem}
+  .doc table{border-collapse:collapse; width:100%; font-size:.9rem; margin:1rem 0 1.4rem}
+  .doc th,.doc td{text-align:left; vertical-align:top; padding:.45rem .6rem; border-bottom:1px solid var(--border)}
+  .doc th{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid)}
+  .doc code{background:var(--surface-deep); padding:.05rem .3rem; border-radius:2px; font-size:.86em; overflow-wrap:anywhere}
+  .doc blockquote{margin:1rem 0; padding:.2rem 1rem; border-left:3px solid var(--accent); color:var(--mid)}
+  .doc ul,.doc ol{padding-left:1.3rem}
+  .doc li{margin:.25rem 0}
+  .doc hr{border:0; border-top:1px solid var(--border); margin:2rem 0}
+  .doc p.frontmatter{font-size:.92rem; color:var(--mid)}
+  .tbl{overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="home" href="/">gocaving.ai</a>
+  <a class="crumb" href="/bogwatch/">BOG Watch</a>
+  <a class="crumb" href="/bogwatch/history/">History</a>
+  <span class="sec">Caving News, year by year</span>
+</header>
+
+<p class="eyebrow">BOG Watch · History · Findings</p>
+<h1>Caving News, year by year</h1>
+<p class="lede prose">Eleven articles, two for each year the site published and the one article of 2016, as the site published them.</p>
+
+<p class="disclaimer"><strong>Not affiliated with the NSS.</strong> A historical account built only
+from public records: NSS Board documents, the Internet Archive's capture index, archived front pages and
+domain registries. No forum post, member profile or reader comment was read, and none is reproduced.</p>
+
+<div class="doc">
+<p class="frontmatter"><strong>Compiled:</strong> 2026-10-09. Companion to <code>2026-10-09_cavingnews-history_findings.md</code>.
+<strong>Ground rules:</strong> Public only · Descriptive · Traceable. The articles are published journalism on an open website.
+Reader comments were not read. The only person named is the site's owner (publisher); guest authors and
+commenters are referred to by role.</p>
+<p><strong>How the pages were obtained.</strong> The live site (cavingnews.com) was unreachable on the morning of 2026-10-09
+(Cloudflare 521, origin not responding), so each article was viewed in the Wayback Machine in a browser on Aaron's
+computer, at the earliest successful capture listed in the index (<code>data/cavingnews_cdx.jsonl</code>), and screenshotted by
+hand. Files: <code>raw/cavingnews/screenshots/&lt;article date&gt;_&lt;slug&gt;_wb&lt;capture date&gt;[_n].png</code>. Three captures (Jan 2012,
+Mar 2012, Mar 2014) were archived without their stylesheet and render as bare HTML; the text is complete. Alternative
+styled captures exist and are listed in the notes.</p>
+<p><strong>How the eleven were chosen.</strong> From the 1,831 article addresses in the index, two per year 2011–2015 and the one
+article of 2016, favouring stories that (a) mark a milestone in the site's own life, (b) show the NSS relationship,
+or (c) report a landmark in caving that the site covered as news. Headlines are the site's own.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Date</th>
+<th>Headline</th>
+<th>Why it stands for its year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2011-03-12</td>
+<td>Welcome to Caving News</td>
+<td>The founding post</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2011-07-25</td>
+<td>Cavers Discuss White-Nose Syndrome at NSS Convention</td>
+<td>WNS and the NSS, the site's defining beat</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2012-01-20</td>
+<td>New Estimate: Up to 6.7 Million Bats Killed by WNS</td>
+<td>The WNS story at its peak; sourced via the NSS</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2012-03-12</td>
+<td>Caving News Joins Forces with National Speleological Society</td>
+<td>The MOU, from the site's side</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2013-01-11</td>
+<td>This Week on CaveChat: January 5th–11th, 2013 Edition</td>
+<td>The forum column; the two histories meet</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2013-02-16</td>
+<td>Kentucky's Mammoth Cave Hits 400 Miles</td>
+<td>A landmark, reported at full stride</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2014-03-17</td>
+<td>Virginia's New River Cave Becomes 14th NSS Cave Preserve</td>
+<td>Board news within days, in the thin year</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2014-12-01</td>
+<td>Real Explorers Don't Use Cable Cars: Save Son Doong</td>
+<td>A guest essay; advocacy on the eve of the revival</td>
+</tr>
+<tr>
+<td>9</td>
+<td>2015-01-23</td>
+<td>Missouri Mayor Welcomes Cavers to the 2015 NSS Convention</td>
+<td>The revival, NSS content, 4,500 followers</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2015-02-21</td>
+<td>Jewel Cave Surpasses 175 Miles in Length</td>
+<td>Survey news with the NPS line plot</td>
+</tr>
+<tr>
+<td>11</td>
+<td>2016-04-21</td>
+<td>Video: Cavers Continue to Push Sweden's Longest Underwater Cave</td>
+<td>The last article</td>
+</tr>
+</tbody>
+</table></div>
+<h2>2011</h2>
+<p><strong>1. Welcome to Caving News (12 March 2011).</strong> Capture 2012-01-07. Three sentences: "Hi everyone! Welcome to Caving
+News! A new site dedicated to cavers, spelunkers and potholers around the world. Caving news aims to be the best source
+for quality cave news on the internet," and an invitation to send in news. Tagline on the masthead: "Daily Cave News
+for Cavers, by Cavers!" The studio mark "Curious Concept" in the corner identifies the developer's own brand. By the
+January 2012 capture the sidebar already offered "Year in Review: The Top Caving News of 2011" and the site had posted
+about its own milestones ("Caving News Gets New Look", "Caving News is Six Months Old Today"). Categories: Discoveries,
+Events, Expeditions, Excavations, Conservation, Biospeleology, Search &amp; Rescue, Incidents.
+Files: <code>2011-03-12_welcome-to-caving-news_wb20120107{,_top,_bottom}.png</code>.</p>
+<p><strong>2. Cavers Discuss White-Nose Syndrome at NSS Convention (25 July 2011).</strong> Capture 2012-01-06. Report of the
+Wednesday session "White Nose Syndrome, A Western Perspective" at the Glenwood Springs convention. The NSS WNS
+liaison is quoted calling evidence of human spread "speculation and hypotheses"; a Fish and Wildlife Service
+representative is quoted that "there is strong evidence that the fungus that causes the disease can be transported by
+humans." The site's own voice follows: cavers "question the policy of closing caves as a preventative measure"; closures
+"are only effective at keeping the responsible cavers out." Source credited: Post Independent. Related strip: Congress
+approves $4 million for WNS; USFWS national plan; Nova Scotia and Maine confirmations.
+Files: <code>2011-07-25_cavers-discuss-wns-at-nss-convention_wb20120106_{1,2,3}.png</code>.</p>
+<h2>2012</h2>
+<p><strong>3. New Estimate: Up to 6.7 Million Bats Killed by WNS (20 January 2012).</strong> Capture 2012-01-24 (unstyled; styled
+alternative <code>/web/20120127044802/</code>). USFWS biologists now estimate "at least 5.7 million to 6.7 million bats" dead since
+2006, replacing the "more than a million" figure "restated thousands of times since 2009"; the estimate came out of the
+Northeast Bat Working Group meeting in Carlisle, Pennsylvania (140 biologists). Source line: "U.S. Fish &amp; Wildlife
+Service via NSS White Nose Syndrome Page", two months before the MOU. Related: "Poll: Were you Alarmed by the New WNS
+Death Toll Estimate?", one of the site's reader polls.
+Files: <code>2012-01-20_6-7-million-bats-killed-by-wns_wb20120124_unstyled_{1,2,3}.png</code>.</p>
+<p><strong>4. Caving News Joins Forces with National Speleological Society (12 March 2012).</strong> Capture 2012-03-14 (unstyled;
+styled alternative <code>/web/20121114085251/</code>). "On the first birthday of Caving News, we are happy to announce that we have
+joined forces with the National Speleological Society." Goals: "to introduce more people around the world to interesting
+news about caves and caving, as well as to increase the visibility of each organization," and "bringing on new content
+writers." Announces the Caving News Widget "to be featured on the NSS website", and "not restricted to the NSS website,
+it is available for anyone to put on their very own site." Board side: MOU approved 31 March 2012 (1203BOG.pdf item 19),
+signed by the owner 10 June 2012.
+File: <code>2012-03-12_caving-news-joins-forces-with-nss_wb20120314_unstyled.png</code>.</p>
+<h2>2013</h2>
+<p><strong>5. This Week on CaveChat: January 5th–11th, 2013 Edition (11 January 2013).</strong> Capture 2013-01-15. Masthead now
+reads "IN ASSOCIATION WITH THE" beside the NSS seal; the column is tagged "NSS". Standing intro: "CaveChat.org is the
+official forum of the National Speleological Society. Since its creation in 2005 CaveChat has quickly become the go to
+place for everything related to caving. With more than 5,800 members and over 112,000 posts…" Five thread titles follow
+(gloves for wet vertical caving, flowstone questions, a cave/spring find, Tyvek water protection, 3D walk-through cave
+map technology). The author box is the CaveChat administrator's own description of his role and of Onlinecavers.com.
+The CaveChat yellow-bat logo appears on the related-news tiles. Sidebar: 2,500 followers; "Ask Cavers" series.
+Files: <code>2013-01-11_this-week-on-cavechat_wb20130115_{1,2}.png</code>.</p>
+<p><strong>6. Kentucky's Mammoth Cave Hits 400 Miles (16 February 2013).</strong> Capture 2013-02-22. Announced at the Mammoth Cave
+Research Symposium by the park superintendent and the Cave Research Foundation president; 400 miles (643 km); the
+growth "a matter of incremental additions … rather than a single major discovery"; CRF volunteers 10,669 hours in
+2012. Photo: NPS. Sidebar: 2,700 followers.
+Files: <code>2013-02-16_mammoth-cave-hits-400-miles_wb20130222_{1,2}.png</code>.</p>
+<h2>2014</h2>
+<p><strong>7. Virginia's New River Cave Becomes 14th NSS Cave Preserve (17 March 2014).</strong> Capture 2014-03-17 (unstyled;
+styled alternative <code>/web/20140326012748/</code>). "The NSS Board of Governors, meeting this weekend in Richmond, Virginia,
+voted to add a 14th preserve to the NSS Cave Preserve system—the five-mile-long New River Cave, longest cave in Giles
+County, Virginia. It is the first cave preserve for the society in the commonwealth." Photo "via NSS". Published the
+same weekend as the vote, in a month with five articles in total: the MOU's liaison clause in practice.
+Files: <code>2014-03-17_new-river-cave-14th-nss-preserve_wb20140317_unstyled_{1,2}.png</code>.</p>
+<p><strong>8. Real Explorers Don't Use Cable Cars: Save Son Doong (1 December 2014).</strong> Capture 2014-12-08. A long first-person
+guest essay by a Vietnam Caves Project expedition caver: why he caves, the 2007 descent of Vuc Tang ("255 meter … deep
+vertical entrance pitch"), Hang En and Son Doong, and the case against the proposed cable car, ending with the</p>
+<h1>SaveSonDoong petition. The new section navigation (Science, Conservation, Exploration, Community, Tourism, Rescue) is</h1>
+<p>in place; 4,300 followers. Follow-up in the index: "Son Doong saved: cable car, no development until 2030"
+(2015-02-13).
+Files: <code>2014-12-01_save-son-doong_wb20141208_{1,2,3}.png</code>.</p>
+<h2>2015</h2>
+<p><strong>9. Missouri Mayor Welcomes Cavers to the 2015 NSS Convention (23 January 2015).</strong> Capture 2015-02-02 (the only
+capture). The Waynesville mayor's first official release for the convention: 2,000 cavers expected, "over 6,300 caves"
+in Missouri, Pulaski County "over 300", Roubidoux Spring; convention 13–17 July. Ticker: "Get the Caving News
+Widget!"; 4,500 followers. The related strip is a short history of NSS conventions as the site covered them: 2011
+Glenwood Springs, 2013 Shippensburg, 2016 Ely announced, the Center for Biological Diversity dispute of 2011.
+Files: <code>2015-01-23_missouri-mayor-welcomes-2015-nss-convention_wb20150202_{1,2}.png</code>.</p>
+<p><strong>10. Jewel Cave Surpasses 175 Miles in Length (21 February 2015).</strong> Capture 2015-02-23. Two teams at West Camp,
+13–16 February, surveyed 6,557.65 ft (1,998.7 m); total 175.13 miles (281.8 km); depth to 677 ft; "over 100
+unexplored leads"; third longest behind Mammoth (400 mi) and Sac Actun (206.9 mi). Includes the NPS line plot of the
+new survey (new passage in red). 4,600 followers.
+Files: <code>2015-02-21_jewel-cave-surpasses-175-miles_wb20150223_{1,2}.png</code>.</p>
+<h2>2016</h2>
+<p><strong>11. Video: Cavers Continue to Push Sweden's Longest Underwater Cave (21 April 2016).</strong> Capture 2016-04-21 (same
+day). Four lines around an embedded video from the 2016 Bjurälven expedition: a folding aluminium ladder "to explore
+the roof inside 'the rain hall'"; Dolinsjö Cave extended 353 m to 2,135 m (1.3 miles). "[via Micke Tilja]" credits
+the source. 5,000 followers; the widget banner still runs. Nothing on the page suggests it is the last; the newest
+story on every later front page, through October 2026, is this one. The embedded video no longer plays from the
+archived page; a frame from the expedition's video on YouTube is saved alongside.
+Files: <code>2016-04-21_swedens-longest-underwater-cave_wb20160421_{1,2}.png</code>, <code>..._youtube-still.png</code>.</p>
+<h2>What the eleven show together</h2>
+<ul>
+<li><strong>The site's own arc in its masthead:</strong> "Daily Cave News for Cavers, by Cavers!" with the Curious Concept mark (2011);
+  "IN ASSOCIATION WITH THE" NSS seal from 2012 to the end; followers 2,500 (Jan 2013) → 2,700 → 4,300 → 4,500 → 4,600 →
+  5,000 (Apr 2016), still rising after publication stopped.</li>
+<li><strong>The NSS relationship was content, not just a logo:</strong> WNS material "via NSS" before the MOU; the CaveChat column and
+  NSS News previews during the thin months; Board decisions and convention releases reported within days.</li>
+<li><strong>White-nose syndrome is the thread</strong> from the first year to the last front page (Idaho Fish and Game "enlists cavers
+  in WNS battle", April 2016).</li>
+<li><strong>Three kinds of piece:</strong> aggregated news with a source line, the site's own editorial voice (the 2011 closures
+  passage), and guest essays (2014).</li>
+</ul>
+</div>
+
+<footer>
+  BOG Watch · gocaving.ai &nbsp;·&nbsp; Public records only &nbsp;·&nbsp;
+  Not affiliated with the National Speleological Society.
+</footer>
+
+</div>
+</body>
+</html>

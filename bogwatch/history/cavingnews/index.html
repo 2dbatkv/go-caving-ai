@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caving News, 2011–2026 · BOG Watch · gocaving.ai</title>
+<meta name="description" content="Caving News (cavingnews.com), 2011–2026: a historical account from public records.">
+<meta property="og:title" content="BOG Watch · Caving News, 2011–2026">
+<meta property="og:description" content="Caving News (cavingnews.com), 2011–2026: a historical account from public records.">
+<meta property="og:image" content="https://gocaving.ai/bogwatch/bogwatch-hero.jpg">
+<meta property="og:url" content="https://gocaving.ai/bogwatch/history/cavingnews/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:#DCE0D9; --surface-deep:#CDD3CB; --card:#E9ECE5; --border:#C9CFC6;
+    --ink:#1C231E; --mid:#5A6455; --accent:#1F5A72; --accent-ink:#164457;
+    --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--surface); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased}
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(var(--surface-deep) 1px,transparent 1px),
+      linear-gradient(90deg,var(--surface-deep) 1px,transparent 1px); background-size:28px 28px}
+  .wrap{position:relative; max-width:54rem; margin:0 auto; padding-inline:1.5rem; padding-block:0 4rem}
+  .prose{max-width:38rem}
+  header.top{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:baseline;
+    padding-block:1.6rem 1.1rem; border-bottom:1px solid var(--border)}
+  header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
+  header.top a.crumb{color:var(--accent); text-decoration:none; font-weight:500}
+  header.top a.home:hover,header.top a.crumb:hover{text-decoration:underline}
+  header.top span.sec{color:var(--mid); font-size:.95rem}
+  .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:2.6rem 0 .9rem}
+  h1{font-size:clamp(2rem,6vw,2.8rem); font-weight:600; letter-spacing:-.03em;
+    line-height:1.05; margin:0 0 .8rem; text-wrap:balance}
+  p.lede{font-size:1.12rem; margin:0 0 1rem}
+  p{margin:0 0 1rem}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+  a:hover{color:var(--accent-ink)}
+  .disclaimer{border-left:3px solid var(--accent); background:var(--card);
+    padding:.85rem 1.1rem; margin:1.6rem 0 0; max-width:38rem; font-size:.95rem; color:var(--mid)}
+  .disclaimer strong{color:var(--ink); font-weight:600}
+  section{margin-top:3.4rem}
+  h2{font-size:1.5rem; font-weight:600; letter-spacing:-.02em; margin:0 0 .5rem; text-wrap:balance}
+  h3{font-size:1.02rem; font-weight:600; margin:1.6rem 0 .3rem}
+  .kicker{font-size:.72rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:0 0 .5rem}
+  .video{position:relative; aspect-ratio:16/9; width:100%; max-width:46rem;
+    border:1px solid var(--border); border-radius:4px; overflow:hidden;
+    background:var(--card); margin-top:1.3rem}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .downloads{display:grid; gap:.8rem; margin-top:1.2rem; max-width:44rem}
+  .dl{display:block; background:var(--card); border:1px solid var(--border);
+    border-left:3px solid var(--accent); border-radius:4px; padding:.9rem 1.1rem; text-decoration:none}
+  .dl:hover{border-color:var(--accent); border-left-color:var(--accent-ink)}
+  .dl .t{font-weight:600; display:block}
+  .dl .m{display:block; color:var(--mid); font-size:.86rem; margin-top:.1rem}
+  .dl .d{display:block; color:var(--mid); font-size:.92rem; margin-top:.35rem; font-weight:400}
+  .source{font-size:.8rem; color:var(--mid); margin-top:.6rem; max-width:44rem}
+  .facts{list-style:none; margin:1.2rem 0 0; padding:0; border-top:1px solid var(--border); max-width:44rem}
+  .facts li{padding:.85rem 0; border-bottom:1px solid var(--border); display:grid; gap:.15rem .9rem}
+  @media(min-width:620px){.facts li{grid-template-columns:7.5rem 1fr; align-items:baseline}}
+  .facts .k{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid); font-weight:600}
+  .facts .v{margin:0}
+  .clip{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--border)}
+  .clip:first-of-type{border-top:0; padding-top:0; margin-top:1.3rem}
+  .clip h3{font-size:1.2rem; margin:0 0 .35rem}
+  .clip .meta{font-size:.86rem; color:var(--mid); margin:0 0 .6rem}
+  .clip .more{font-size:.92rem; margin:.8rem 0 0}
+  footer{margin-top:3.6rem; padding-top:1.1rem; border-top:1px solid var(--border);
+    color:var(--mid); font-size:.88rem}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+<style>
+  .doc{max-width:46rem}
+  .doc h2{margin-top:2.6rem}
+  .doc h3{font-size:1.05rem; margin:1.6rem 0 .3rem}
+  .doc table{border-collapse:collapse; width:100%; font-size:.9rem; margin:1rem 0 1.4rem}
+  .doc th,.doc td{text-align:left; vertical-align:top; padding:.45rem .6rem; border-bottom:1px solid var(--border)}
+  .doc th{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid)}
+  .doc code{background:var(--surface-deep); padding:.05rem .3rem; border-radius:2px; font-size:.86em; overflow-wrap:anywhere}
+  .doc blockquote{margin:1rem 0; padding:.2rem 1rem; border-left:3px solid var(--accent); color:var(--mid)}
+  .doc ul,.doc ol{padding-left:1.3rem}
+  .doc li{margin:.25rem 0}
+  .doc hr{border:0; border-top:1px solid var(--border); margin:2rem 0}
+  .doc p.frontmatter{font-size:.92rem; color:var(--mid)}
+  .tbl{overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="home" href="/">gocaving.ai</a>
+  <a class="crumb" href="/bogwatch/">BOG Watch</a>
+  <a class="crumb" href="/bogwatch/history/">History</a>
+  <span class="sec">Caving News</span>
+</header>
+
+<p class="eyebrow">BOG Watch · History · Findings</p>
+<h1>Caving News, 2011–2026</h1>
+<p class="lede prose">The NSS's one-time media partner: 1,831 articles in five years, an MOU with the Society, a collapse, a revival, a silence, and a restoration in 2025.</p>
+
+<p class="disclaimer"><strong>Not affiliated with the NSS.</strong> A historical account built only
+from public records: NSS Board documents, the Internet Archive's capture index, archived front pages and
+domain registries. No forum post, member profile or reader comment was read, and none is reproduced.</p>
+
+<div class="doc">
+<p class="frontmatter"><strong>Compiled:</strong> 2026-10-09.
+<strong>Decisions followed:</strong> <code>docs/2026-10-09_cavechat-wayback_questions.md</code> (Q1, Q2 and the cavingnews addendum).
+<strong>Ground rules:</strong> Public only · Descriptive · Traceable · No article text, no reader comments, no names other than
+the site's owner as named in NSS Board minutes.</p>
+<p>Sources: (1) NSS Board minutes, agendas and officer reports (<code>index/minutes.sqlite</code>; 30 pages mention the site);
+(2) the Internet Archive's public CDX index of cavingnews.com (<code>data/cavingnews_cdx.jsonl</code>, 132,398 rows); (3) sixteen
+archived front pages, 2011–2026 (<code>raw/cavingnews/</code>, <code>data/cavingnews_manifest.csv</code>); (4) the .com registry's RDAP
+record (<code>data/cavingnews_rdap.json</code>); (5) the site's own public About page as served today. Derived:
+<code>data/cavingnews_articles_by_month.csv</code>.</p>
+<h2>Bottom line</h2>
+<ol>
+<li><strong>Caving News published 1,831 articles between 12 March 2011 and 21 April 2016</strong>, a one-person daily cave-news
+   site built by "a caver/web developer" (its About page). The domain was registered on 11 March 2011, the day before
+   the first article.</li>
+<li><strong>The NSS made it an official partner.</strong> The Board approved a Memorandum of Understanding on 31 March 2012
+   (Act 66-859, Appendix BA), the owner signed on 10 June 2012, and the NSS put a Caving News feed widget on the
+   caves.org home page and on CaveChat. The MOU stayed in the Manual until the Board rescinded it on 23 November 2023
+   in a batch of housekeeping rescissions, seven years after the last article.</li>
+<li><strong>Output ran at 35–45 articles a month for two and a half years, collapsed in October 2013, came back stronger
+   than ever in January–July 2015 (65–94 a month), then stopped.</strong> One article in April 2016 is the last.</li>
+<li><strong>The NSS's reports track the feed, not the site.</strong> "The daily CavingNews widget went silent back in April [2015]"
+   is the site's busiest month (94 articles); the widget subdomain was what failed. "Gone stale since April [2016],
+   due to the owner's life hiccups" is the actual end.</li>
+<li><strong>The site died in November 2021 and was restored in August 2025.</strong> Every capture of the front page from
+   29 November 2021 to 15 April 2025 is an HTTP 500 error. From 23 August 2025 the original WordPress 4.5 site answers
+   again, with the same newest story (21 April 2016), and it is online today, still carrying the NSS logo and link.</li>
+</ol>
+<h2>1. Launch and the daily years (2011–2013)</h2>
+<ul>
+<li>Domain registered 2011-03-11 (RDAP). First dated article 2011-03-12. First Wayback capture 2011-04-01, title
+  "Caving News - Daily Cave News for Cavers, by Caver".</li>
+<li>About page (then and now): "the best source of daily cave news from around the world"; the site "scans the web for
+  breaking news, discoveries, and events" and invites cavers to submit news.</li>
+<li>Articles per month, 2011-03 to 2013-09: 31–64, median 40 (<code>data/cavingnews_articles_by_month.csv</code>). Section
+  navigation in 2012: Discoveries, Events, Expeditions, Excavations, Conservation, Biospeleology, Search &amp; Rescue,
+  Incidents, Archaeology, Cave Diving, Equipment, Photography, Publication, Technology, plus location tags and an
+  "NSS" tag; a "Write a guest post on Caving News" link.</li>
+<li>The weekly "This Week on CaveChat" column (2012–2013) was written by CaveChat's administrator for Caving News
+  (OVP-1206.pdf p.8; cavingnews.com posts). An "Ask Cavers" reader-question series ran 2013–2014.</li>
+</ul>
+<h2>2. The NSS partnership (2012–2017)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Event</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mar 2012</td>
+<td>President: "I noticed a website, CavingNews.com, some months ago and was impressed by its function. After consulting our IT department negotiations began with the site owner." Plan: NSS logo "prominently at the top of their page", a Caving News widget on the NSS home page: "daily news of the caving world!"</td>
+<td>PRES-1203.pdf p.3</td>
+</tr>
+<tr>
+<td>31 Mar 2012</td>
+<td>Board approves the MOU, unanimous (item 19; Act 66-859, Appendix BA). Agenda note: "Both organizations will benefit from mutual traffic."</td>
+<td>1203BOG.pdf p.10, 15–16; Agenda-1203.pdf p.8</td>
+</tr>
+<tr>
+<td>10 Jun 2012</td>
+<td>Owner signs (Scott Falkingham, Owner).</td>
+<td>BOG Manual 2022 p.290</td>
+</tr>
+<tr>
+<td>Jun 2012</td>
+<td>Widget placed on the caves.org home page and on CaveChat.</td>
+<td>OVP-1206.pdf p.6</td>
+</tr>
+<tr>
+<td>Jun–Oct 2012</td>
+<td>President: "Continued active collaboration with Scott Falkingham of CavingNews.com … great success providing day-to-day visual and verbal content … during this year's Convention in West Virginia."</td>
+<td>PRES-1206 p.15; PRES-1210 p.13</td>
+</tr>
+<tr>
+<td>Mar 2013</td>
+<td>A Twitter widget added to the home page "balancing the CavingNews widget"; Caving News called a "media partner".</td>
+<td>OVP-1303 p.6; PRES-1303 p.16</td>
+</tr>
+<tr>
+<td>Mar 2015</td>
+<td>"The daily CavingNews widget went silent back in April. Email inquiries got no reply, so in early December, we reluctantly pulled the plug. Not two weeks later, it came back to life, so the widget has been reinstated."</td>
+<td>OVP-1503.pdf p.7</td>
+</tr>
+<tr>
+<td>Oct 2016</td>
+<td>"Caving News: This feature has gone stale since April, due to the owner's life hiccups; he is looking for help in maintaining this valuable service."</td>
+<td>OVP-1610.pdf p.11</td>
+</tr>
+<tr>
+<td>Mar 2017</td>
+<td>"The CavingNews widget, which had died, has been removed."</td>
+<td>OVP-1703.pdf p.9</td>
+</tr>
+<tr>
+<td>23 Nov 2023</td>
+<td>Board rescinds Act 66-859 (item 7.5, Tiderman), with the note "A board act is not needed to justify an appendix."</td>
+<td>2311BOG.pdf p.4; 2311 agenda p.2</td>
+</tr>
+</tbody>
+</table></div>
+<p>The MOU's terms (Appendix BA): mutual promotion and links; "The Society, through its liaison, will assist Caving
+News in creating and providing caving- and cave-related news content"; each party to "portray each other in a
+positive manner"; an NSS Caving News liaison responsible for carrying it out; 30 days' written notice to cancel. No
+public document records the liaison's name or the MOU being cancelled before the 2023 rescission.</p>
+<p>The NSS logo and a link to caves.org appear on every archived front page from May 2012 onward, including the pages
+served in 2025 and 2026.</p>
+<h2>3. Collapse, revival, end (2013–2016)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Period</th>
+<th>Articles / month</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2011-03 → 2013-09</td>
+<td>31–64</td>
+<td>daily publication</td>
+</tr>
+<tr>
+<td>2013-10 → 2014-04</td>
+<td>9, 5, 20, 12, 6, 5, 5</td>
+<td>collapse</td>
+</tr>
+<tr>
+<td>2014-05 → 2014-11</td>
+<td>0</td>
+<td>nothing; the Oct 2014 front page still shows an April story</td>
+</tr>
+<tr>
+<td>2014-12</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>2015-01 → 2015-07</td>
+<td>65, 74, 74, 94, 75, 53, 45</td>
+<td>the busiest seven months in the site's life</td>
+</tr>
+<tr>
+<td>2015-08 → 2016-03</td>
+<td>0</td>
+<td>the March 2016 front page shows a July 2015 story</td>
+</tr>
+<tr>
+<td>2016-04</td>
+<td>1</td>
+<td>the last article, 21 April 2016</td>
+</tr>
+</tbody>
+</table></div>
+<p>Front-page title changed from "Daily Cave News for Cavers, by Caver" (2011) to "Daily News for Cavers" (2012) to
+"Underground News for Cavers" (2013 on). The 2015 revival coincided with a redesign: section navigation became
+Science, Conservation, Exploration, Community, Tourism, Rescue, Gear &amp; Tech, Diversions. The widget subdomain
+(widget.cavingnews.com, 363 captures) answers 403 from 2018.</p>
+<h2>4. Dormant, dead, restored (2016–2026)</h2>
+<ul>
+<li><strong>2016–2021, dormant but online.</strong> WordPress 4.5 (released April 2016, never upgraded), the same front page with
+  the same newest story at every capture. The Archive crawled it heavily in 2019–2020 (35,000 and 30,000 captures).
+  No hiatus or closure notice was ever posted.</li>
+<li><strong>29 Nov 2021 → 15 Apr 2025, dead.</strong> Every front-page capture returns HTTP 500; the few article captures in
+  2022–2024 are all 500s. Total captures: 113 (2022), 93 (2023), 76 (2024).</li>
+<li><strong>From 23 Aug 2025, restored.</strong> The front page answers 200 again (12 KB), WordPress 4.5, newest story
+  21 April 2016, 1,468 successful article captures in 2025–2026. Nameservers are Cloudflare; the registry record was
+  last changed 12 March 2026; registration runs to 11 March 2027 with registrar NameSilo. Captures: 1,688 (2025),
+  2,309 (2026 to 5 October). The last capture in the index is 2026-10-05.</li>
+<li>Today (2026-10-09) the site serves its front page normally, with its 2016 content, the NSS logo and link, and no
+  notice of its status.</li>
+</ul>
+<h2>5. Capture density (Internet Archive, all cavingnews.com hosts)</h2>
+<p>2011: 1,243 · 2012: 11,641 · 2013: 15,176 · 2014: 1,701 · 2015: 5,356 · 2016: 8,164 · 2017: 1,308 · 2018: 11,715 ·
+2019: 34,991 · 2020: 29,978 · 2021: 6,846 · 2022: 113 · 2023: 93 · 2024: 76 · 2025: 1,688 · 2026: 2,309.</p>
+<h2>6. What the public record does not say</h2>
+<ol>
+<li>Why publication collapsed in October 2013 and stopped in July 2015 (the Board's 2016 report says only "the
+   owner's life hiccups").</li>
+<li>Who the NSS Caving News liaison was, and whether the MOU was ever formally cancelled before 2023.</li>
+<li>What failed in November 2021, and who restored the site in August 2025 and renewed the domain in 2026.</li>
+<li>Whether the restoration is intended as a permanent archive.</li>
+</ol>
+<h2>Method and limits</h2>
+<ul>
+<li><code>python -m crawler cn-discover / cn-rdap / cn-fetch</code> under <code>CRAWL_POLICY.md</code> §7: a few index requests, one
+  registry request, 16 archived front pages. Nothing from the live site beyond its public About page, read once.</li>
+<li>Publication counts are distinct article URLs with a date in the path and a 200 capture; articles never captured
+  are not counted, so the monthly figures are floors. For 2011–2013, with daily crawling, they are close to complete.</li>
+<li>No article page or comment was read. Bylines other than the owner's are not recorded here.</li>
+</ul>
+</div>
+
+<footer>
+  BOG Watch · gocaving.ai &nbsp;·&nbsp; Public records only &nbsp;·&nbsp;
+  Not affiliated with the National Speleological Society.
+</footer>
+
+</div>
+</body>
+</html>

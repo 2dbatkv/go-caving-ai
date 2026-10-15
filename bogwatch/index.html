@@ -33,6 +33,9 @@
   header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
   header.top a.home:hover{text-decoration:underline}
   header.top span.sec{color:var(--mid); font-size:.95rem}
+  header.top a.hdrlink{margin-left:auto; color:var(--accent); text-decoration:none;
+    font-weight:500; font-size:.95rem; white-space:nowrap}
+  header.top a.hdrlink:hover{text-decoration:underline}
   .hero{display:block; width:100%; height:auto; margin:1.6rem 0 0;
     border:1px solid var(--border); border-radius:4px; background:var(--card)}
   .vh{position:absolute; width:1px; height:1px; padding:0; margin:-1px;
@@ -110,6 +113,7 @@
 <header class="top">
   <a class="home" href="/">gocaving.ai</a>
   <span class="sec">BOG Watch</span>
+  <a class="hdrlink" href="/bogwatch/notify/">Get notified</a>
 </header>
 
 <img class="hero" src="bogwatch-hero.jpg" width="1407" height="768"
@@ -127,6 +131,12 @@ fingerprint and a retrieval time on file.</p>
 <p class="disclaimer"><strong>Not affiliated with the NSS.</strong> Only facts, sources
 and questions. The record speaks for itself. Convened by Aaron Bird, NSS Fellow,
 NSS&nbsp;#27029.</p>
+
+<div class="notify">
+  <p><strong>Want a reminder?</strong> Join a short list and hear before each call, and when
+  something new goes up. Your address is never shown or shared.</p>
+  <a class="joinbtn" href="/bogwatch/notify/">Get notified</a>
+</div>
 
 <section>
   <p class="kicker">Where things stand</p>
@@ -296,12 +306,6 @@ NSS&nbsp;#27029.</p>
   <p class="source" style="font-size:.8rem;color:var(--mid);margin-top:.9rem">
   Topics are announced closer to each call. Public records only, same three ground rules.</p>
 </section>
-
-<div class="notify">
-  <p><strong>Want a reminder?</strong> Join a short list and hear before each call, and when
-  something new goes up. Your address is never shown or shared.</p>
-  <a class="joinbtn" href="/bogwatch/notify/">Get notified</a>
-</div>
 
 <section>
   <p class="kicker">Archive</p>

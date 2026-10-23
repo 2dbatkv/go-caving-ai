@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Are they working on the right stuff? · BOG Watch · gocaving.ai</title>
+<meta name="description" content="BOG Watch, 22 October 2026: what the NSS Board of Governors put on its agendas in 2026, and what attendees said should be on them. Slides and a written summary; no recording.">
+<meta property="og:title" content="BOG Watch — 22 October 2026">
+<meta property="og:description" content="Are they working on the right stuff? The 2026 agendas, and what attendees said should be on them.">
+<meta property="og:image" content="https://gocaving.ai/bogwatch/bogwatch-hero.jpg">
+<meta property="og:url" content="https://gocaving.ai/bogwatch/2026-10-22/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:#DCE0D9; --surface-deep:#CDD3CB; --card:#E9ECE5; --border:#C9CFC6;
+    --ink:#1C231E; --mid:#5A6455; --accent:#1F5A72; --accent-ink:#164457;
+    --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--surface); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased}
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(var(--surface-deep) 1px,transparent 1px),
+      linear-gradient(90deg,var(--surface-deep) 1px,transparent 1px); background-size:28px 28px}
+  .wrap{position:relative; max-width:54rem; margin:0 auto; padding-inline:1.5rem; padding-block:0 4rem}
+  .prose{max-width:38rem}
+  header.top{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:baseline;
+    padding-block:1.6rem 1.1rem; border-bottom:1px solid var(--border)}
+  header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
+  header.top a.crumb{color:var(--accent); text-decoration:none; font-weight:500}
+  header.top a.home:hover,header.top a.crumb:hover{text-decoration:underline}
+  header.top span.sec{color:var(--mid); font-size:.95rem}
+  .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:2.6rem 0 .9rem}
+  h1{font-size:clamp(2rem,6vw,2.8rem); font-weight:600; letter-spacing:-.03em;
+    line-height:1.05; margin:0 0 .8rem; text-wrap:balance}
+  p.lede{font-size:1.12rem; margin:0 0 1rem}
+  p{margin:0 0 1rem}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+  a:hover{color:var(--accent-ink)}
+  .disclaimer{border-left:3px solid var(--accent); background:var(--card);
+    padding:.85rem 1.1rem; margin:1.6rem 0 0; max-width:38rem; font-size:.95rem; color:var(--mid)}
+  .disclaimer strong{color:var(--ink); font-weight:600}
+  section{margin-top:3.4rem}
+  h2{font-size:1.5rem; font-weight:600; letter-spacing:-.02em; margin:0 0 .5rem; text-wrap:balance}
+  h3{font-size:1.02rem; font-weight:600; margin:1.6rem 0 .3rem}
+  .kicker{font-size:.72rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:0 0 .5rem}
+  .video{position:relative; aspect-ratio:16/9; width:100%; max-width:46rem;
+    border:1px solid var(--border); border-radius:4px; overflow:hidden;
+    background:var(--card); margin-top:1.3rem}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .downloads{display:grid; gap:.8rem; margin-top:1.2rem; max-width:44rem}
+  .dl{display:block; background:var(--card); border:1px solid var(--border);
+    border-left:3px solid var(--accent); border-radius:4px; padding:.9rem 1.1rem; text-decoration:none}
+  .dl:hover{border-color:var(--accent); border-left-color:var(--accent-ink)}
+  .dl .t{font-weight:600; display:block}
+  .dl .m{display:block; color:var(--mid); font-size:.86rem; margin-top:.1rem}
+  .dl .d{display:block; color:var(--mid); font-size:.92rem; margin-top:.35rem; font-weight:400}
+  .source{font-size:.8rem; color:var(--mid); margin-top:.6rem; max-width:44rem}
+  .facts{list-style:none; margin:1.2rem 0 0; padding:0; border-top:1px solid var(--border); max-width:44rem}
+  .facts li{padding:.85rem 0; border-bottom:1px solid var(--border); display:grid; gap:.15rem .9rem}
+  @media(min-width:620px){.facts li{grid-template-columns:7.5rem 1fr; align-items:baseline}}
+  .facts .k{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid); font-weight:600}
+  .facts .v{margin:0}
+  footer{margin-top:3.6rem; padding-top:1.1rem; border-top:1px solid var(--border);
+    color:var(--mid); font-size:.88rem}
+  .prose ul,.prose ol{padding-left:1.2rem; margin:0 0 1rem}
+  .prose li{margin:0 0 .45rem}
+  .note{background:var(--card); border:1px solid var(--border); border-radius:4px; padding:.85rem 1.1rem; max-width:44rem; font-size:.95rem; color:var(--mid); margin-top:1.2rem}
+  .note strong{color:var(--ink)}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="home" href="/">gocaving.ai</a>
+  <a class="crumb" href="/bogwatch/">BOG Watch</a>
+  <span class="sec">Call of 22 October 2026</span>
+</header>
+
+<p class="eyebrow">BOG Watch · 22 October 2026 · Public records, then discussion</p>
+<h1>Are they working on the right stuff?</h1>
+<p class="lede prose">What the NSS Board of Governors put on its agendas in 2026, set beside
+what the people on the call think should be on them.</p>
+
+<p class="disclaimer"><strong>Not affiliated with the NSS.</strong> The first part of this call
+was read from the public record; every document referred to was retrieved from a public web
+address, with no login. The second part was discussion. Views in the second part are the
+attendees' own, not BOG Watch findings. Not legal or accounting advice.</p>
+
+<section>
+  <p class="kicker">The call</p>
+  <h2>Slides and summary</h2>
+  <p class="note"><strong>No recording is published for this call.</strong> The earlier calls
+  were readings of the record and their recordings are on their pages. This one was a
+  conversation, and it is reported here as a written summary instead.</p>
+
+  <h3>Slides</h3>
+  <div class="downloads">
+    <a class="dl" href="BOGWatch_2026-10-22_Right_Stuff.pdf">
+      <span class="t">Are they working on the right stuff?</span>
+      <span class="m">PDF · 6 pages · 88 KB</span>
+      <span class="d">The six slides shown on the call: how the evening worked, the 2026
+      agendas by meeting and by theme, the 17 October meeting, and the three questions put
+      to the room. Facts as of 22 October 2026.</span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <p class="kicker">What this call was</p>
+  <h2>A different kind of call</h2>
+  <p class="prose">The first three BOG Watch calls were close readings of the record: the
+  minutes, the rulebook, the Constitution and the financials. This one was different. It put
+  the Board's 2026 agendas on screen and asked the people on the call what they think the Board
+  should be working on, and what it has done well. The answers become the starting point for a
+  questionnaire to cavers across North America.</p>
+  <p class="prose">Five people took part. The call ran about ninety minutes.</p>
+</section>
+
+<section>
+  <p class="kicker">Part 1</p>
+  <h2>The record</h2>
+  <div class="prose">
+  <ul>
+    <li><strong>What the Board put on its agendas in 2026</strong>, January to the 17 October
+    meeting: one table, nine meetings, open-session motions beside what was reported from closed
+    session.</li>
+    <li><strong>By theme:</strong> about $535,000 committed by motion (Mill Creek legal costs
+    $30k, Cave Avenue demolition up to $60k, a museum note of $190k later rescinded, $100k each
+    to NCRC and VTC, $55k for the Executive Director search); roughly 48 motions in July
+    rewriting the fiscal Acts; four land and partner agreements; seven people items.</li>
+    <li><strong>Not on any 2026 open-session agenda:</strong> Article III of the Constitution,
+    the missing FY2022 Form 990, publication of an audit, an evaluation framework for the
+    Executive Director, membership numbers, communication with members.</li>
+    <li><strong>Since the last call:</strong> the Conflict of Interest Policy, posted the day
+    before the 17 October vote, and the agenda for that meeting, re-posted the night before with
+    one new closed-session item.</li>
+  </ul>
+  </div>
+  <p class="source">The one limit, stated at the start: the record shows what reached an agenda
+  or a vote. Committee, staff and closed-session work does not appear. Sources are on the
+  slides and on the <a href="/bogwatch/">home page</a> under “What they're up to now”.</p>
+</section>
+
+<section>
+  <p class="kicker">Part 2</p>
+  <h2>What attendees said should be on the list</h2>
+  <p class="prose">In the order raised. Each is an attendee's view.</p>
+
+  <h3>Caves and land</h3>
+  <p class="prose">More NSS preserves and acquisitions as the Society's resources grow; more
+  MOUs and cooperative agreements of the kind approved in April (US Forest Service, Appalachian
+  Cave Conservancy, Thunderhole). One suggestion: let members vote on which of three candidate
+  caves becomes the next preserve. Cooperation with the Southeastern Cave Conservancy was singled
+  out as something members would welcome more of.</p>
+
+  <h3>A welcoming community for new cavers</h3>
+  <p class="prose">The structure the NSS and its grottos give a nineteen- or twenty-year-old
+  trying to get involved: connections, landowner relations, something safe and dependable. This
+  was the one priority named on the call that appears nowhere on the 2026 agendas, except perhaps
+  under the Code of Conduct report.</p>
+
+  <h3>Transparency</h3>
+  <div class="prose">
+  <ul>
+    <li>Is it important to members to know what the Board is doing, and how much detail do they
+    want? The $190,000 museum note, approved in March and rescinded in June with no public
+    explanation of either decision, was the example.</li>
+    <li>Member comments at Board meetings could be entered in the minutes with the speaker's
+    consent, so other members can see what was asked. That question is not currently asked.</li>
+    <li>Where a matter must stay confidential (litigation, personnel), the cost could still be
+    reported. One attendee, from experience as a grotto officer, explained why some legal matters
+    cannot be discussed in open session; the question that followed was whether the amounts, at
+    least, could be.</li>
+    <li>Cost breakdowns for large items, such as the $30,000 approved in January for legal
+    costs.</li>
+  </ul>
+  </div>
+
+  <h3>Who serves on the Board, and how they are chosen</h3>
+  <div class="prose">
+  <ul>
+    <li>What qualifications does the Nominating Committee look for when it asks someone to run?
+    One attendee suggested simply asking the committee.</li>
+    <li>Whether there should be minimum requirements for directors, given the size of the
+    Society's assets and budget. The counter-argument was also made: the Presidency of the United
+    States has two qualifications, and the Society's rules deliberately let any adult member in
+    good standing run.</li>
+    <li>One attendee's summary, which the room agreed with: the requirements for serving on the
+    Board have not kept pace with the sophistication of the business the Board now conducts.</li>
+    <li>Whether the membership should have a larger part in choosing the Executive Director.</li>
+  </ul>
+  </div>
+
+  <h3>Records and rules</h3>
+  <p class="prose">Complete the Board Manual so that the job descriptions for the
+  Secretary-Treasurer, the officers and the directors are in it; today those appendices are
+  blank. Correct errors in agendas and minutes on a timely basis (the 17 October agenda calls
+  Act 03-445 a Bylaw). Version a document when it changes: both copies of the 17 October agenda
+  are labelled V 1.0.</p>
+
+  <h3>Volunteers</h3>
+  <p class="prose">Volunteer service was recognised throughout. The point made was that
+  willingness is necessary but not sufficient for work of this scale, and that volunteers should
+  be enabled to contribute expertise, including through reimbursement.</p>
+
+  <h3>The Conflict of Interest Policy</h3>
+  <p class="prose">One attendee read the clause “a conflict exists only if the Chair of the
+  Board and/or the Executive Director decides” alongside the fact that the Interim Executive
+  Director is also the Secretary-Treasurer, and asked how a conflict concerning either of those
+  offices would be decided.</p>
+</section>
+
+<section>
+  <p class="kicker">Part 2, continued</p>
+  <h2>What attendees said the Board has done well</h2>
+  <p class="prose">The land and partner agreements: the two MOUs and the joint management
+  agreement approved in April, and the Mill Creek Sink work. Several people said protecting
+  caves, including the legal costs that come with it, is what they most want the Society's money
+  spent on.</p>
+</section>
+
+<section>
+  <p class="kicker">Next</p>
+  <h2>Where the questionnaire goes from here</h2>
+  <p class="prose">There was agreement that a questionnaire is worth doing, for three reasons
+  given on the call:</p>
+  <div class="prose">
+  <ol>
+    <li>A call of five people is not representative of cavers at large.</li>
+    <li>Most members, by their own account, do not follow what the Board does closely enough to
+    grade it. So the questionnaire should ask what people value and what they would want to
+    know, not ask them to judge a record they have not read.</li>
+    <li>Five or ten voices are easy to set aside; a hundred or a thousand are not.</li>
+  </ol>
+  </div>
+  <p class="prose">Design points raised: keep it short and pointed; make it open to cavers
+  whether or not they are NSS members, but record membership so results can be read either way;
+  publish the method and the number of responses with the results.</p>
+  <p class="prose">A draft will go to the attendees for comment first. Results will be presented
+  on a later call and published here. To hear when it goes out,
+  <a href="/bogwatch/notify/">join the notification list</a>.</p>
+</section>
+
+<section>
+  <p class="kicker">Looked up during the call</p>
+  <h2>Facts read from the record</h2>
+  <p class="prose">These were looked up live. Sources: the Board of Governors Manual as of
+  6 July 2026, and the minutes named.</p>
+  <ul class="facts">
+    <li><span class="k">Agendas</span><p class="v">A preliminary agenda is placed on a public
+    area of the NSS website at least one month before a meeting and replaced by the final agenda
+    at least two weeks before, “with every effort to have all motions presented” (Appendix,
+    Section II). Every agenda must include an open discussion section (Acts 04-093, 04-472).</p></li>
+    <li><span class="k">Nominating Committee</span><p class="v">At least three members, appointed
+    annually by the Chair of the Board and approved by the Board (Bylaws V.B.4). It runs the
+    director election and, since the 2024 Bylaws, identifies Executive Director candidates and
+    oversees the search firm (VI.A.3, VI.E.3). The search must use a third-party firm with a
+    candidate guarantee of six months to a year (Appendix X, Part II). The last public roster is
+    from 2024: Anna Pearce, chair, with three members. No Board approval of the committee appears
+    in the 2025 or 2026 minutes.</p></li>
+    <li><span class="k">Elections</span><p class="v">Three directors are elected by members each
+    year for three-year terms and seated at the Convention Board meeting; a fourth is appointed
+    by the Board at its spring meeting. Working back from a June 2027 Convention in Texas: ballots
+    close about mid-May, go out by mid-April, nominations close about 1 March, and the call for
+    nominations goes out by mid-January 2027. Any eligible member can be placed on the ballot by
+    petition of 25 voting members; write-ins are allowed.</p></li>
+    <li><span class="k">2020 committee</span><p class="v">The Executive Director Exploratory
+    Committee concluded that governance issues had to be resolved before an ED was hired, that an
+    ED “would have no control over the governance components of the society by design and
+    therefore cannot fix them,” and that any candidate “should start the job knowing how they
+    will be evaluated.” Its report was delivered in July 2020 and the committee dissolved in
+    November 2020.</p></li>
+  </ul>
+</section>
+
+<footer>
+  BOG Watch · gocaving.ai &nbsp;·&nbsp; Public records only &nbsp;·&nbsp;
+  Not affiliated with the National Speleological Society. &nbsp;·&nbsp;
+  The views in Part 2 are those of the people who expressed them.
+</footer>
+
+</div>
+</body>
+</html>

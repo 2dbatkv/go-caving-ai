@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Take the questionnaire · BOG Watch · gocaving.ai</title>
+<meta name="description" content="The BOG Watch questionnaire form.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:#DCE0D9; --surface-deep:#CDD3CB; --card:#E9ECE5; --border:#C9CFC6;
+    --ink:#1C231E; --mid:#5A6455; --accent:#1F5A72; --accent-ink:#164457;
+    --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--surface); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased}
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(var(--surface-deep) 1px,transparent 1px),
+      linear-gradient(90deg,var(--surface-deep) 1px,transparent 1px); background-size:28px 28px}
+  .wrap{position:relative; max-width:54rem; margin:0 auto; padding-inline:1.5rem; padding-block:0 4rem}
+  .prose{max-width:40rem}
+  header.top{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:baseline;
+    padding-block:1.6rem 1.1rem; border-bottom:1px solid var(--border)}
+  header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
+  header.top a.crumb{color:var(--accent); text-decoration:none; font-weight:500}
+  header.top a.home:hover,header.top a.crumb:hover{text-decoration:underline}
+  header.top span.sec{color:var(--mid); font-size:.95rem}
+  .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:2.6rem 0 .9rem}
+  h1{font-size:clamp(2rem,6vw,2.8rem); font-weight:600; letter-spacing:-.03em;
+    line-height:1.05; margin:0 0 .8rem; text-wrap:balance}
+  p.lede{font-size:1.12rem; margin:0 0 1rem; max-width:40rem}
+  p{margin:0 0 1rem}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+  a:hover{color:var(--accent-ink)}
+  h2{font-size:1.3rem; font-weight:600; letter-spacing:-.02em; margin:0 0 .5rem}
+  ul,ol{margin:0 0 1rem; padding-left:1.25rem}
+  li{margin-bottom:.3rem}
+  .blk{margin-top:2.4rem; max-width:40rem}
+  .blk.wide{max-width:46rem}
+  .sub{color:var(--mid); font-size:.95rem}
+  .two{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem}
+  @media (max-width:560px){ .two{grid-template-columns:1fr} }
+  .box{background:var(--card); border:1px solid var(--border); border-radius:4px; padding:1rem 1.1rem}
+  .box p.t{font-weight:600; margin:0 0 .4rem}
+  .box ul{margin:0; font-size:.95rem}
+  .facts{list-style:none; margin:.5rem 0 0; padding:0; border-top:1px solid var(--border)}
+  .facts li{display:grid; grid-template-columns:7.5rem 1fr; gap:.2rem .9rem; margin:0;
+    padding:.7rem 0; border-bottom:1px solid var(--border); align-items:baseline}
+  @media (max-width:560px){ .facts li{grid-template-columns:1fr} }
+  .facts .k{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid); font-weight:600}
+  .facts p{margin:0}
+  .consent{margin-top:2.6rem; background:var(--card); border:1px solid var(--border);
+    border-left:3px solid var(--accent); border-radius:4px; padding:1.4rem 1.5rem; max-width:46rem}
+  .consent p:last-of-type{margin-bottom:1.1rem}
+  .row{display:flex; flex-wrap:wrap; align-items:center; gap:.75rem 1.25rem}
+  .btn{display:inline-flex; align-items:center; justify-content:center; min-height:2.9rem;
+    padding:.7rem 1.3rem; border-radius:4px; border:0; background:var(--accent); color:var(--card);
+    font:inherit; font-weight:500; cursor:pointer; text-decoration:none}
+  .btn:hover{background:var(--accent-ink); color:var(--card)}
+  .btn.ghost{background:none; color:var(--accent); padding-inline:.25rem}
+  .btn.ghost:hover{text-decoration:underline; background:none; color:var(--accent-ink)}
+  .placeholder{border:1px dashed var(--mid); border-radius:4px; padding:1rem 1.1rem; color:var(--mid); font-size:.95rem}
+  input[type=text]{font:inherit; color:var(--ink); background:var(--card); width:100%; max-width:30rem;
+    border:1px solid var(--border); border-radius:4px; padding:.6rem .7rem}
+  footer{margin-top:3.6rem; padding-top:1.1rem; border-top:1px solid var(--border);
+    color:var(--mid); font-size:.88rem}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .formframe{margin-top:1.6rem; max-width:46rem}
+  .formframe iframe{display:block; width:100%; min-height:30rem; border:0}
+  .fallback{margin-top:1rem; max-width:46rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="home" href="/">gocaving.ai</a>
+  <a class="crumb" href="/bogwatch/">BOG Watch</a>
+  <a class="crumb" href="/bogwatch/questionnaire/">Questionnaire</a>
+  <span class="sec">Form</span>
+</header>
+
+<main>
+  <p class="eyebrow">Questionnaire · About 7 minutes</p>
+  <h1>What do cavers want from the organizations that represent them?</h1>
+  <p class="sub prose">Anonymous · every question is optional · about cave-related organizations that are nonprofit and not owned by any one person or company · <a href="/bogwatch/questionnaire/">How this works</a></p>
+
+  <div class="formframe">
+    <iframe id="tallyForm"
+      data-tally-src="https://tally.so/embed/vXeMJg?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+      loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
+      title="BOG Watch questionnaire"></iframe>
+  </div>
+
+  <p class="sub fallback">The form is hosted by Tally. It stores only your answers and the time they were sent; it does not record your location. See the <a href="/bogwatch/questionnaire/privacy/">privacy notice</a>. If the form does not load, <a id="tallyDirect" href="https://tally.so/r/vXeMJg">open it on its own page</a>.</p>
+</main>
+
+<footer>
+  BOG Watch · gocaving.ai &nbsp;·&nbsp; Not affiliated with any caving organization.
+</footer>
+
+</div>
+<script>
+/* Pass the link tags from this page's address on to the form's hidden fields.
+   channel defaults to "direct"; cur is passed only if present. Values are limited
+   to letters, digits, "-" and "_" so nothing else can be injected. */
+(function(){
+  var q = new URLSearchParams(location.search);
+  function clean(v){ v = (v || '').trim(); return /^[A-Za-z0-9_-]{1,40}$/.test(v) ? v : ''; }
+  var tags = new URLSearchParams();
+  tags.set('channel', clean(q.get('channel')) || 'direct');
+  var cur = clean(q.get('cur')); if (cur) tags.set('cur', cur);
+  tags.set('form_version', '3.1');
+  var f = document.getElementById('tallyForm');
+  f.setAttribute('data-tally-src', f.getAttribute('data-tally-src') + '&' + tags.toString());
+  var a = document.getElementById('tallyDirect');
+  a.href = a.getAttribute('href') + '?' + tags.toString();
+})();
+</script>
+<script>
+/* Tally's standard inline embed loader: sizes the form to its content. */
+var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(null==d.querySelector('script[src="'+w+'"]')){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+</script>
+</body>
+</html>

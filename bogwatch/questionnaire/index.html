@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questionnaire · BOG Watch · gocaving.ai</title>
+<meta name="description" content="An anonymous questionnaire asking cavers, and people who support caves, what they want from the organizations that represent them.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:#DCE0D9; --surface-deep:#CDD3CB; --card:#E9ECE5; --border:#C9CFC6;
+    --ink:#1C231E; --mid:#5A6455; --accent:#1F5A72; --accent-ink:#164457;
+    --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--surface); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased}
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(var(--surface-deep) 1px,transparent 1px),
+      linear-gradient(90deg,var(--surface-deep) 1px,transparent 1px); background-size:28px 28px}
+  .wrap{position:relative; max-width:54rem; margin:0 auto; padding-inline:1.5rem; padding-block:0 4rem}
+  .prose{max-width:40rem}
+  header.top{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:baseline;
+    padding-block:1.6rem 1.1rem; border-bottom:1px solid var(--border)}
+  header.top a.home{color:var(--accent); text-decoration:none; font-weight:600}
+  header.top a.crumb{color:var(--accent); text-decoration:none; font-weight:500}
+  header.top a.home:hover,header.top a.crumb:hover{text-decoration:underline}
+  header.top span.sec{color:var(--mid); font-size:.95rem}
+  .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--mid); font-weight:600; margin:2.6rem 0 .9rem}
+  h1{font-size:clamp(2rem,6vw,2.8rem); font-weight:600; letter-spacing:-.03em;
+    line-height:1.05; margin:0 0 .8rem; text-wrap:balance}
+  p.lede{font-size:1.12rem; margin:0 0 1rem; max-width:40rem}
+  p{margin:0 0 1rem}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+  a:hover{color:var(--accent-ink)}
+  h2{font-size:1.3rem; font-weight:600; letter-spacing:-.02em; margin:0 0 .5rem}
+  ul,ol{margin:0 0 1rem; padding-left:1.25rem}
+  li{margin-bottom:.3rem}
+  .blk{margin-top:2.4rem; max-width:40rem}
+  .blk.wide{max-width:46rem}
+  .sub{color:var(--mid); font-size:.95rem}
+  .two{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem}
+  @media (max-width:560px){ .two{grid-template-columns:1fr} }
+  .box{background:var(--card); border:1px solid var(--border); border-radius:4px; padding:1rem 1.1rem}
+  .box p.t{font-weight:600; margin:0 0 .4rem}
+  .box ul{margin:0; font-size:.95rem}
+  .facts{list-style:none; margin:.5rem 0 0; padding:0; border-top:1px solid var(--border)}
+  .facts li{display:grid; grid-template-columns:7.5rem 1fr; gap:.2rem .9rem; margin:0;
+    padding:.7rem 0; border-bottom:1px solid var(--border); align-items:baseline}
+  @media (max-width:560px){ .facts li{grid-template-columns:1fr} }
+  .facts .k{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--mid); font-weight:600}
+  .facts p{margin:0}
+  .consent{margin-top:2.6rem; background:var(--card); border:1px solid var(--border);
+    border-left:3px solid var(--accent); border-radius:4px; padding:1.4rem 1.5rem; max-width:46rem}
+  .consent p:last-of-type{margin-bottom:1.1rem}
+  .row{display:flex; flex-wrap:wrap; align-items:center; gap:.75rem 1.25rem}
+  .btn{display:inline-flex; align-items:center; justify-content:center; min-height:2.9rem;
+    padding:.7rem 1.3rem; border-radius:4px; border:0; background:var(--accent); color:var(--card);
+    font:inherit; font-weight:500; cursor:pointer; text-decoration:none}
+  .btn:hover{background:var(--accent-ink); color:var(--card)}
+  .btn.ghost{background:none; color:var(--accent); padding-inline:.25rem}
+  .btn.ghost:hover{text-decoration:underline; background:none; color:var(--accent-ink)}
+  .placeholder{border:1px dashed var(--mid); border-radius:4px; padding:1rem 1.1rem; color:var(--mid); font-size:.95rem}
+  input[type=text]{font:inherit; color:var(--ink); background:var(--card); width:100%; max-width:30rem;
+    border:1px solid var(--border); border-radius:4px; padding:.6rem .7rem}
+  footer{margin-top:3.6rem; padding-top:1.1rem; border-top:1px solid var(--border);
+    color:var(--mid); font-size:.88rem}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="home" href="/">gocaving.ai</a>
+  <a class="crumb" href="/bogwatch/">BOG Watch</a>
+  <span class="sec">Questionnaire</span>
+</header>
+
+<main>
+  <p class="eyebrow">Questionnaire · Opens 1 December 2026 · About 7 minutes</p>
+  <h1>What do cavers want from the organizations that represent them?</h1>
+  <p class="lede">Before you start, here is what you will be asked, what we collect, and how you will see the results. Please read it; it takes a minute.</p>
+
+  <section class="blk">
+    <h2>What this is</h2>
+    <p>An anonymous questionnaire asking cavers, and people who support caves, what they want from the organizations that represent cavers: what those organizations should do, and how they should be run. It is in English, and responses are welcome from anywhere. You can say where you live and see amounts in your own currency.</p>
+    <p>It is run by BOG Watch, an independent project by Aaron Bird, a caver since 1986. It is not run by, or affiliated with, any caving organization.</p>
+  </section>
+
+  <section class="blk">
+    <h2>Which organizations this is about</h2>
+    <p>This questionnaire is about <strong>cave-related organizations that are non-commercial and nonprofit, and not owned by any one person or company</strong>: national and regional caving societies and federations, clubs and grottos, cave and karst conservancies, cave rescue organizations, and similar groups that exist for their members and for caves.</p>
+    <p>It is not about businesses that serve cavers, such as outfitters, guides, show caves or training companies, however good they are.</p>
+  </section>
+
+  <section class="blk">
+    <h2>Who can take part</h2>
+    <p>Anyone <strong>18 or older</strong> who caves, used to cave, or supports caves and caving: cavers, cave divers, scientists, landowners and land managers, donors and supporters. You do not need to belong to any organization.</p>
+  </section>
+
+  <section class="blk">
+    <h2>What you will be asked</h2>
+    <ol>
+      <li><strong>About you</strong>: how you are involved with caves, where you live, which organizations you belong to, and your experience. No names.</li>
+      <li><strong>What it should do</strong>: what share of an organization’s spending you would give to each of the things it can do, and the one thing you would pick. No money is involved; it is only a way of showing priorities.</li>
+      <li><strong>How it should be run</strong>: eleven choices between two reasonable positions, the three things you would expect of any such organization, and how much you want to know about what its board does.</li>
+      <li><strong>Who leads it</strong>: what matters in a board member, what should be expected of people before they stand or are appointed, what should be expected once they join, whether a board should review its own work, and what would make you more likely to serve.</li>
+    </ol>
+    <p>Every question is optional. Skip anything you prefer not to answer. There are no right answers.</p>
+  </section>
+
+  <section class="blk wide">
+    <h2>What we collect, and what we don't</h2>
+    <div class="two">
+      <div class="box"><p class="t">We collect</p><ul><li>Your answers</li><li>The date and time you sent them</li><li>The currency you chose to see amounts in</li><li>Which link you used (for example, a Facebook group or a club email), so we can show how the questionnaire was shared</li></ul></div>
+      <div class="box"><p class="t">We do not collect</p><ul><li>Your name or email address</li><li>Your IP address or location</li><li>Anything that links your answers to you</li></ul></div>
+    </div>
+    <p class="sub" style="margin-top:.75rem">To limit repeat submissions, the form allows one response per browser. Because nothing links your answers to you, we cannot find or remove a response once it has been sent. Full details are in the <a href="/bogwatch/questionnaire/privacy/">privacy notice</a>.</p>
+  </section>
+
+  <section class="blk">
+    <h2>How your answers will be used</h2>
+    <ul>
+      <li>Results are reported only as totals and percentages. Individual responses are never published.</li>
+      <li>Any group with fewer than 30 responses is not reported on its own; it is combined with others.</li>
+      <li>Written answers may be quoted, with anything that could identify a person removed.</li>
+      <li>The form is hosted by Tally. Within 14 days of the close, the answers are exported and the copy on Tally is deleted. BOG Watch keeps the exported answers until 31 December 2028 to check the results, then deletes them. The published totals stay online.</li>
+    </ul>
+  </section>
+
+  <section class="blk">
+    <h2>What the results can and can't tell us</h2>
+    <p>People choose whether to answer, so the results describe those who responded, not every caver. Where people live and what they belong to is self-reported and cannot be checked. The results are an indication of what cavers and supporters value: a starting point for conversations, not a vote and not a verdict on any organization.</p>
+  </section>
+
+  <section class="blk wide">
+    <h2>How you will see the results</h2>
+    <ul class="facts">
+      <li><span class="k">Where</span><p>A public page anyone can read, no login: gocaving.ai/bogwatch/questionnaire/results/</p></li>
+      <li><span class="k">When</span><p>The questionnaire opens 1 December 2026 and stays open until at least 15 January 2027; the closing date will be announced at least two weeks ahead. Results follow within about a month of closing and are presented on an open BOG Watch call.</p></li>
+      <li><span class="k">What</span><p>A summary; results by country and by group; the method in full, including how many responded and how the questionnaire was shared; and the questionnaire itself.</p></li>
+      <li><span class="k">Shared with</span><p>Caving organizations that ask for it, as a short summary.</p></li>
+    </ul>
+    <p class="sub" style="margin-top:.75rem">To be told when the results are out, you can <a href="/bogwatch/notify/">join the notification list</a>. That is a separate form; the questionnaire never asks for your address.</p>
+  </section>
+
+  <section class="blk">
+    <h2>Questions about this questionnaire</h2>
+    <p>Contact [contact email]. How your answers are handled is set out in the <a href="/bogwatch/questionnaire/privacy/">privacy notice</a>.</p>
+  </section>
+
+  <section class="consent">
+    <h2>Ready?</h2>
+    <p>By selecting <strong>Start the questionnaire</strong>, you confirm that you are <strong>18 or older</strong>, that you have read the information above and the <a href="/bogwatch/questionnaire/privacy/">privacy notice</a>, and that you agree to take part on these terms.</p>
+    <div class="row">
+      <a class="btn" id="goStart" href="/bogwatch/questionnaire/take/">Start the questionnaire</a>
+      <a class="btn ghost" href="/bogwatch/questionnaire/not-now/">I'm under 18, or not now</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  BOG Watch · gocaving.ai &nbsp;·&nbsp; Not affiliated with any caving organization.
+</footer>
+
+</div>
+<script>
+/* Keep link tags (channel, cur) when moving on to the form page. */
+(function(){
+  var q = new URLSearchParams(location.search), keep = new URLSearchParams();
+  ['channel','cur'].forEach(function(k){
+    var v = (q.get(k) || '').trim();
+    if (/^[A-Za-z0-9_-]{1,40}$/.test(v)) keep.set(k, v);
+  });
+  var s = keep.toString();
+  if (s) { var a = document.getElementById('goStart'); a.href = a.getAttribute('href') + '?' + s; }
+})();
+</script>
+</body>
+</html>

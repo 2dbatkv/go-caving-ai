@@ -115,7 +115,7 @@
   var tags = new URLSearchParams();
   tags.set('channel', clean(q.get('channel')) || 'direct');
   var cur = clean(q.get('cur')); if (cur) tags.set('cur', cur);
-  tags.set('form_version', '3.1');
+  tags.set('form_version', '3.2');
   var f = document.getElementById('tallyForm');
   f.setAttribute('data-tally-src', f.getAttribute('data-tally-src') + '&' + tags.toString());
   var a = document.getElementById('tallyDirect');

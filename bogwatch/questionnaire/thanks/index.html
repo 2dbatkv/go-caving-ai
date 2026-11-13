@@ -101,12 +101,17 @@
     <p class="sub" id="copied" hidden>Copied.</p>
   </section>
 
-  <section class="blk">
+  <section class="blk" id="notifyAdults">
     <h2>Get notified</h2>
-    <p>To hear when the results are out, join the notification list. It is a separate form; your email is never stored with, or connected to, your answers.</p>
+    <p>To hear when the results are out, join the notification list. It is for adults (18 or older) only. It is a separate form; your email is never stored with, or connected to, your answers.</p>
     <div class="row">
       <a class="btn" href="/bogwatch/notify/">Get notified</a>
     </div>
+  </section>
+
+  <section class="blk" id="resultsTeen" hidden>
+    <h2>Seeing the results</h2>
+    <p>The results will be on a public page that anyone can read, with no sign-up needed: gocaving.ai/bogwatch/questionnaire/results/</p>
   </section>
 
   <p style="margin-top:2.4rem"><a href="/bogwatch/">Back to BOG Watch</a></p>
@@ -118,6 +123,15 @@
 
 </div>
 <script>
+/* The form sends the age band here (?age=...). People aged 13 to 17 are not
+   offered the notification list, which is for adults only. */
+(function(){
+  var age = (new URLSearchParams(location.search).get('age') || '').trim();
+  if (/^13\s*[-\u2013\u2014]\s*17$/.test(age)) {
+    document.getElementById('notifyAdults').hidden = true;
+    document.getElementById('resultsTeen').hidden = false;
+  }
+})();
 (function(){
   var b = document.getElementById('copyLink'), i = document.getElementById('shareLink');
   b.addEventListener('click', function(){

@@ -88,7 +88,7 @@
 
   <section class="blk">
     <h2>What this is</h2>
-    <p>An anonymous questionnaire asking cavers, and people who support caves, what they want from the organizations that represent cavers: what those organizations should do, and how they should be run. It is in English, and responses are welcome from anywhere. You can say where you live and see amounts in your own currency.</p>
+    <p>An anonymous questionnaire asking cavers, and people who support caves, what they want from the organizations that represent cavers: what those organizations should do, and how they should be run. It is in English, and responses are welcome from anywhere.</p>
     <p>It is run by BOG Watch, an independent project by Aaron Bird, a caver since 1986. It is not run by, or affiliated with, any caving organization.</p>
   </section>
 
@@ -117,7 +117,7 @@
   <section class="blk wide">
     <h2>What we collect, and what we don't</h2>
     <div class="two">
-      <div class="box"><p class="t">We collect</p><ul><li>Your answers</li><li>The date and time you sent them</li><li>The currency you chose to see amounts in</li><li>Which link you used (for example, a Facebook group or a club email), so we can show how the questionnaire was shared</li></ul></div>
+      <div class="box"><p class="t">We collect</p><ul><li>Your answers</li><li>The date and time you sent them</li><li>Which link you used (for example, a Facebook group or a club email), so we can show how the questionnaire was shared</li></ul></div>
       <div class="box"><p class="t">We do not collect</p><ul><li>Your name or email address</li><li>Your IP address or location</li><li>Anything that links your answers to you</li></ul></div>
     </div>
     <p class="sub" style="margin-top:.75rem">Because nothing links your answers to you, we cannot find or remove a response once it has been sent. Full details are in the <a href="/bogwatch/questionnaire/privacy/">privacy notice</a>.</p>
@@ -170,10 +170,10 @@
 
 </div>
 <script>
-/* Keep link tags (channel, cur) when moving on to the form page. */
+/* Keep the link tag (channel) when moving on to the form page. */
 (function(){
   var q = new URLSearchParams(location.search), keep = new URLSearchParams();
-  ['channel','cur'].forEach(function(k){
+  ['channel'].forEach(function(k){
     var v = (q.get(k) || '').trim();
     if (/^[A-Za-z0-9_-]{1,40}$/.test(v)) keep.set(k, v);
   });

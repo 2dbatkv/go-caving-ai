@@ -107,14 +107,13 @@
 </div>
 <script>
 /* Pass the link tags from this page's address on to the form's hidden fields.
-   channel defaults to "direct"; cur is passed only if present. Values are limited
+   channel defaults to "direct". Values are limited
    to letters, digits, "-" and "_" so nothing else can be injected. */
 (function(){
   var q = new URLSearchParams(location.search);
   function clean(v){ v = (v || '').trim(); return /^[A-Za-z0-9_-]{1,40}$/.test(v) ? v : ''; }
   var tags = new URLSearchParams();
   tags.set('channel', clean(q.get('channel')) || 'direct');
-  var cur = clean(q.get('cur')); if (cur) tags.set('cur', cur);
   tags.set('form_version', '3.2');
   var f = document.getElementById('tallyForm');
   f.setAttribute('data-tally-src', f.getAttribute('data-tally-src') + '&' + tags.toString());
